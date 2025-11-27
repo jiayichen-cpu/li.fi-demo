@@ -1,23 +1,12 @@
 import { prisma } from "@/lib/prisma";
-import { formatCurrency, maskAddress } from "@/lib/utils";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-
-// Plan listed table, card, button. Badge wasn't listed, but it's nice for Rank.
-// I'll just use simple styling for now to avoid extra steps unless needed.
+import { Card, CardContent } from "@/components/ui/card";
+import { LeaderboardTable } from "@/components/LeaderboardTable";
 
 interface LeaderboardEntry {
   rank: number;
   address: string;
   volume: number;
-  pnl: number; // Added PnL
+  pnl: number;
 }
 
 export const dynamic = 'force-dynamic';
@@ -34,58 +23,44 @@ export default async function Home() {
     : [];
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-8 md:p-24 bg-slate-50 dark:bg-slate-950">
-      <div className="z-10 w-full max-w-4xl items-center justify-between font-mono text-sm lg:flex mb-8">
-        <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
-          Perps Trading Leaderboard
-        </h1>
-        <p className="text-slate-500 dark:text-slate-400">
-          OneKey Users - 24h Volume & PnL
-        </p>
+    <main className="min-h-screen bg-[#F5F5F7] dark:bg-[#000000] text-slate-900 dark:text-slate-100 font-sans selection:bg-emerald-500/30">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden pb-12 pt-16 sm:pt-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+          <div className="mx-auto max-w-3xl">
+            <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-6xl dark:text-white mb-6">
+              OneKey Perps Trading <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00B812] to-[#00D615]">Leaderboard</span>
+            </h1>
+            <p className="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+              Daily performance tracking for top traders in the OneKey ecosystem. 
+              Monitor 24h volume and PnL with precision.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <Card className="w-full max-w-4xl shadow-lg">
-        <CardHeader>
-          <CardTitle>Daily Volume Rankings</CardTitle>
-          <CardDescription>
-            Last updated: {snapshot ? new Date(snapshot.date).toLocaleString() : "Never"}
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          {!snapshot ? (
-             <div className="text-center py-10 text-slate-500">
-               No data available yet. Run the cron job to populate data.
-             </div>
-          ) : (
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="w-[100px]">Rank</TableHead>
-                  <TableHead>User Address</TableHead>
-                  <TableHead className="text-right">24h Volume (USD)</TableHead>
-                  <TableHead className="text-right">24h PnL (USD)</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {entries.map((entry) => (
-                  <TableRow key={entry.address}>
-                    <TableCell className="font-medium">
-                      {entry.rank === 1 ? "🥇" : entry.rank === 2 ? "🥈" : entry.rank === 3 ? "🥉" : entry.rank}
-                    </TableCell>
-                    <TableCell className="font-mono">{maskAddress(entry.address)}</TableCell>
-                    <TableCell className="text-right font-bold text-emerald-600 dark:text-emerald-400">
-                      {formatCurrency(entry.volume)}
-                    </TableCell>
-                    <TableCell className={`text-right font-bold ${entry.pnl >= 0 ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"}`}>
-                      {entry.pnl >= 0 ? "+" : ""}{formatCurrency(entry.pnl)}
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          )}
-        </CardContent>
-      </Card>
+      {/* Content Section */}
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-24">
+        <Card className="border-0 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none dark:bg-[#111111] dark:border dark:border-white/10 backdrop-blur-sm overflow-hidden rounded-3xl transition-all duration-200">
+          <CardContent className="p-0 bg-white dark:bg-[#111111]">
+            {!snapshot ? (
+              <div className="flex flex-col items-center justify-center py-24 text-slate-500">
+                <div className="h-12 w-12 rounded-full bg-slate-50 dark:bg-white/5 flex items-center justify-center mb-4 animate-pulse">
+                  <svg className="w-6 h-6 text-slate-300 dark:text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                  </svg>
+                </div>
+                <p className="font-medium">Awaiting data synchronization...</p>
+              </div>
+            ) : (
+              <LeaderboardTable 
+                entries={entries} 
+                lastUpdated={new Date(snapshot.date)} 
+              />
+            )}
+          </CardContent>
+        </Card>
+      </div>
     </main>
   );
 }
