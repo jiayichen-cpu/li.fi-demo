@@ -227,7 +227,8 @@ export async function aggregateVolume(fills: HydromancerFill[]): Promise<UserVol
     const results = await Promise.all(
       batch.map(async (user) => {
         const pnl = await fetchUserPnl(user.address);
-        return { ...user, pnl };
+        // rank will be assigned later
+        return { ...user, pnl, rank: 0 };
       })
     );
     usersWithPnl.push(...results);
