@@ -2,7 +2,6 @@ import { prisma } from "@/lib/prisma";
 import { Card, CardContent } from "@/components/ui/card";
 import { LeaderboardTable } from "@/components/LeaderboardTable";
 import { EventDetails } from "@/components/EventDetails";
-import { Calendar } from "lucide-react";
 import { Countdown } from "@/components/Countdown";
 
 interface LeaderboardEntry {
@@ -73,7 +72,7 @@ export default async function Home() {
 
           {/* Right Column: Leaderboard (8/12) */}
           <div className="lg:col-span-8 order-1 lg:order-2 space-y-6">
-            <Card className="border-0 shadow-sm dark:shadow-none dark:bg-[#111111] dark:border dark:border-white/10 overflow-hidden rounded-2xl">
+            <Card className="border-0 shadow-sm dark:shadow-none dark:bg-[#111111] dark:border dark:border-white/10 overflow-hidden rounded-2xl pb-0">
               <CardContent className="p-0 bg-white dark:bg-[#111111]">
                 {!snapshot ? (
                   <div className="flex flex-col items-center justify-center py-24 text-slate-500">

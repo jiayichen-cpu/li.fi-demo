@@ -96,52 +96,63 @@ export function LeaderboardTable({ entries, lastUpdated }: { entries: Leaderboar
       </CardHeader>
 
       {/* Table */}
-      <div className="overflow-hidden flex flex-col" style={{ height: '850px' }}>
-        <div className="overflow-x-auto flex-1 min-h-0">
+      <div className="flex flex-col">
+        <div className="overflow-x-auto">
           <Table>
             <TableHeader>
               <TableRow className="hover:bg-transparent border-b border-slate-100 dark:border-white/5">
-                <TableHead className="w-[80px] pl-8 font-semibold text-slate-900 dark:text-slate-200">Rank</TableHead>
-                <TableHead className="font-semibold text-slate-900 dark:text-slate-200">Trader</TableHead>
-                <TableHead className="text-right font-semibold text-slate-900 dark:text-slate-200">24h Volume</TableHead>
-                <TableHead className="text-right pr-8 font-semibold text-slate-900 dark:text-slate-200">24h PnL</TableHead>
+                <TableHead className="w-[80px] pl-8 font-semibold text-slate-900 dark:text-slate-200 h-[44px]">Rank</TableHead>
+                <TableHead className="font-semibold text-slate-900 dark:text-slate-200 h-[44px]">Trader</TableHead>
+                <TableHead className="text-right font-semibold text-slate-900 dark:text-slate-200 h-[44px]">24h Volume</TableHead>
+                <TableHead className="text-right pr-8 font-semibold text-slate-900 dark:text-slate-200 h-[44px]">24h PnL</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {paginatedEntries.length === 0 ? (
-                 <TableRow>
-                   <TableCell colSpan={4} className="h-[750px] text-center text-slate-500">
+                 <TableRow className="h-[900px]">
+                   <TableCell colSpan={4} className="text-center text-slate-500">
                      No results found.
                    </TableCell>
                  </TableRow>
               ) : (
-                paginatedEntries.map((entry) => (
-                  <TableRow 
-                    key={entry.address} 
-                    className="group hover:bg-slate-50/80 dark:hover:bg-white/[0.02] transition-colors border-b border-slate-50 dark:border-white/5 last:border-0"
-                  >
-                    <TableCell className="pl-8 font-medium py-4">
-                      <RankBadge rank={entry.rank} />
-                    </TableCell>
-                    <TableCell className="py-4">
-                      <span className="font-mono text-sm text-slate-600 dark:text-slate-300 bg-slate-100/50 dark:bg-white/5 px-2.5 py-1 rounded-md ring-1 ring-black/5 dark:ring-white/5 group-hover:bg-white dark:group-hover:bg-white/10 transition-all">
-                        {maskAddress(entry.address)}
-                      </span>
-                    </TableCell>
-                    <TableCell className="text-right font-mono font-medium py-4 text-slate-700 dark:text-slate-200">
-                      {formatCurrency(entry.volume)}
-                    </TableCell>
-                    <TableCell className={`text-right pr-8 font-mono font-bold py-4 ${
-                      entry.pnl > 0 
-                        ? "text-[#00B812] dark:text-[#00B812]" 
+                <>
+                  {paginatedEntries.map((entry) => (
+                    <TableRow 
+                      key={entry.address} 
+                      className="group hover:bg-slate-50/80 dark:hover:bg-white/[0.02] transition-colors border-b border-slate-50 dark:border-white/5 h-[60px]"
+                    >
+                      <TableCell className="pl-8 font-medium h-[60px]">
+                        <RankBadge rank={entry.rank} />
+                      </TableCell>
+                      <TableCell className="h-[60px]">
+                        <span className="font-mono text-sm text-slate-600 dark:text-slate-300 bg-slate-100/50 dark:bg-white/5 px-2.5 py-1 rounded-md ring-1 ring-black/5 dark:ring-white/5 group-hover:bg-white dark:group-hover:bg-white/10 transition-all">
+                          {maskAddress(entry.address)}
+                        </span>
+                      </TableCell>
+                      <TableCell className="text-right font-mono font-medium h-[60px] text-slate-700 dark:text-slate-200">
+                        {formatCurrency(entry.volume)}
+                      </TableCell>
+                      <TableCell className={`text-right pr-8 font-mono font-bold h-[60px] ${
+                        entry.pnl > 0 
+                          ? "text-[#00B812] dark:text-[#00B812]" 
                         : entry.pnl < 0 
                           ? "text-rose-500 dark:text-rose-400" 
                           : "text-slate-400"
-                    }`}>
-                      {entry.pnl > 0 ? "+" : ""}{formatCurrency(entry.pnl)}
-                    </TableCell>
-                  </TableRow>
-                ))
+                      }`}>
+                        {entry.pnl > 0 ? "+" : ""}{formatCurrency(entry.pnl)}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                  {/* Fill empty rows to always show 15 rows */}
+                  {Array.from({ length: itemsPerPage - paginatedEntries.length }).map((_, index) => (
+                    <TableRow key={`empty-${index}`} className="h-[60px] border-b border-slate-50 dark:border-white/5">
+                      <TableCell className="h-[60px]">&nbsp;</TableCell>
+                      <TableCell className="h-[60px]">&nbsp;</TableCell>
+                      <TableCell className="h-[60px]">&nbsp;</TableCell>
+                      <TableCell className="h-[60px]">&nbsp;</TableCell>
+                    </TableRow>
+                  ))}
+                </>
               )}
             </TableBody>
           </Table>
@@ -149,7 +160,7 @@ export function LeaderboardTable({ entries, lastUpdated }: { entries: Leaderboar
         
         {/* Pagination Controls */}
         {filteredEntries.length > 0 && (
-            <div className="flex-shrink-0 flex items-center justify-center px-6 py-4 border-t border-slate-100 dark:border-white/5 bg-slate-50/50 dark:bg-white/[0.02]">
+            <div className="flex-shrink-0 flex items-center justify-center px-6 py-6 border-t border-slate-100 dark:border-white/5 bg-slate-50/50 dark:bg-white/[0.02]">
               <div className="flex items-center space-x-2">
                 <Button
                   variant="outline"
