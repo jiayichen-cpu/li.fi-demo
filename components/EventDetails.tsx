@@ -59,13 +59,13 @@ export function EventDetails() {
                     <span className="font-medium text-slate-900 dark:text-white">
                       1 Winner:
                     </span>{" "}
-                    OneKey Classic 1S
+                    OneKey Classic 1S.
                   </li>
                   <li>
                     <span className="font-medium text-slate-900 dark:text-white">
                       2 Winners:
                     </span>{" "}
-                    OneKey Merchandise Set
+                    OneKey Merchandise Set.
                   </li>
                 </ul>
               </div>
@@ -89,7 +89,7 @@ export function EventDetails() {
                   .
                 </p>
                 <p className="text-[11px] text-slate-400 italic pt-0.5">
-                  * Final ranking will be published here after event ends.
+                  * Final ranking will be published here after the event ends.
                 </p>
               </div>
             </div>
@@ -113,10 +113,10 @@ export function EventDetails() {
               <AccordionContent className="px-8 pb-4 pt-0">
                 <div className="space-y-2">
                   <ul className="space-y-1.5 text-[13px] text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
-                    <li>Download or open the OneKey App</li>
-                    <li>Go to the Perps trading page from the home screen</li>
-                    <li>Deposit funds and open a position</li>
-                    <li>Complete two trades within a cycle to join the draw</li>
+                    <li>Download or open the OneKey App.</li>
+                    <li>Go to the Perps trading page from the home screen.</li>
+                    <li>Deposit funds and open a position.</li>
+                    <li>Complete two trades within a cycle to join the draw.</li>
                   </ul>
                   <div className="mt-3 pt-3 border-t border-slate-100 dark:border-white/10">
                     <p className="text-[11px] font-medium text-slate-900 dark:text-white mb-2">
@@ -131,9 +131,9 @@ export function EventDetails() {
                           className="text-slate-900 dark:text-white font-medium hover:underline"
                         >
                           OneKey App download link
-                        </a>
+                        </a>.
                       </li>
-                      <li>Perps quick start guide (links added after preview phase)</li>
+                      <li>Perps quick start guide (links added after preview phase).</li>
                     </ul>
                   </div>
                 </div>
@@ -147,16 +147,59 @@ export function EventDetails() {
               <AccordionContent className="px-8 pb-4 pt-0">
                 <div className="space-y-2">
                   <ul className="space-y-1.5 text-[13px] text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
-                    <li>(Optional) Open any Perps position</li>
-                    <li>Go to the referral page to generate your referral link or code</li>
-                    <li>Publish your trading logic, reviews, screenshots, or opinions on platforms such as X, Telegram, Discord, Xiaohongshu, or WeChat</li>
+                    <li>(Optional) Open any Perps position.</li>
+                    <li>Go to the referral page to generate your referral link or code.</li>
+                    <li>Publish your trading logic, reviews, screenshots, or opinions on platforms such as X, Telegram, Discord, Xiaohongshu, or WeChat.</li>
                     <li>
                       Posts on X must include the hashtag{" "}
-                      <strong className="text-slate-900 dark:text-white">#OneKeyPerps</strong> and tag{" "}
-                      <strong className="text-slate-900 dark:text-white">@OneKeyCN @OneKeyHQ</strong>
+                      <a 
+                        href="https://x.com/hashtag/OneKeyPerps" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="font-bold text-slate-900 dark:text-white hover:underline"
+                      >
+                        #OneKeyPerps
+                      </a>{" "}
+                      and tag{" "}
+                      <a 
+                        href="https://x.com/OneKeyCN" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="font-bold text-slate-900 dark:text-white hover:underline"
+                      >
+                        @OneKeyCN
+                      </a>{" "}
+                      <a 
+                        href="https://x.com/OneKeyHQ" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="font-bold text-slate-900 dark:text-white hover:underline"
+                      >
+                        @OneKeyHQ
+                      </a>.
                     </li>
-                    <li>Your post must contain your referral link or a position share image</li>
-                    <li>After publishing, send your post to @OneKeyCN or @OneKeyHQ via direct message on X, or submit it to customer support on the official Help Center</li>
+                    <li>Your post must contain your referral link or a position share image.</li>
+                    <li>
+                      After publishing, send your post to{" "}
+                      <a 
+                        href="https://x.com/OneKeyCN" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="font-bold text-slate-900 dark:text-white hover:underline"
+                      >
+                        @OneKeyCN
+                      </a>{" "}
+                      or{" "}
+                      <a 
+                        href="https://x.com/OneKeyHQ" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="font-bold text-slate-900 dark:text-white hover:underline"
+                      >
+                        @OneKeyHQ
+                      </a>{" "}
+                      via direct message on X, or submit it to customer support on the official Help Center.
+                    </li>
                   </ul>
                 </div>
               </AccordionContent>
@@ -172,9 +215,9 @@ export function EventDetails() {
                     After the event, we will publish:
                   </p>
                   <ul className="space-y-1 text-[13px] text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
-                    <li>The cycle draw winners</li>
-                    <li>Content selection results</li>
-                    <li>The top trading volume rankings</li>
+                    <li>The cycle draw winners.</li>
+                    <li>Content selection results.</li>
+                    <li>The top trading volume rankings.</li>
                   </ul>
                   <p className="text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed">
                     Winners may claim their prizes by sending a direct message to the official X account or by submitting a support ticket.
