@@ -10,8 +10,9 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { formatCurrency, maskAddress } from "@/lib/utils";
-import { Search } from "lucide-react";
+import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 interface LeaderboardEntry {
   rank: number;
@@ -48,31 +49,46 @@ function RankBadge({ rank }: { rank: number }) {
 
 export function LeaderboardTable({ entries, lastUpdated }: { entries: LeaderboardEntry[], lastUpdated: Date | null }) {
   const [searchQuery, setSearchQuery] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 15;
 
+  // Filter entries
   const filteredEntries = entries.filter(entry => 
     entry.address.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredEntries.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedEntries = filteredEntries.slice(startIndex, startIndex + itemsPerPage);
+
+  // Reset page when search changes
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    setCurrentPage(1);
+  };
+
   return (
     <>
-      <CardHeader className="border-b border-slate-100 dark:border-white/5 bg-white/50 dark:bg-transparent px-6 py-5 sm:px-8 sm:py-6">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div>
-            <CardTitle className="text-xl font-bold tracking-tight">Daily Volume Rankings</CardTitle>
-            <CardDescription className="mt-1.5 text-slate-500 dark:text-slate-400 flex items-center gap-2">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-              Last updated: {lastUpdated ? lastUpdated.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }) : "Pending..."} (UTC+8)
+      <CardHeader className="border-b border-slate-100 dark:border-white/5 bg-white dark:bg-transparent px-8 h-[72px] flex flex-col justify-center">
+        <div className="flex items-center justify-between w-full gap-4">
+          <div className="flex flex-col justify-center">
+            <CardTitle className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">
+               Daily Volume Rankings
+            </CardTitle>
+            <CardDescription className="mt-0.5 text-[10px] text-slate-400 hidden md:block">
+              Updated: {lastUpdated ? lastUpdated.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false, month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }) : "--/-- --:--"}
             </CardDescription>
           </div>
           
           {/* Search Bar */}
-          <div className="relative w-full md:w-72">
+          <div className="relative w-40 md:w-64">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
             <input
               type="text"
               placeholder="Search by address..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={handleSearch}
               className="h-10 w-full rounded-xl border-0 bg-slate-100 pl-10 text-sm text-slate-900 placeholder:text-slate-500 focus:ring-2 focus:ring-inset focus:ring-[#00B812] dark:bg-white/5 dark:text-slate-100 dark:placeholder:text-slate-400"
             />
           </div>
@@ -80,54 +96,85 @@ export function LeaderboardTable({ entries, lastUpdated }: { entries: Leaderboar
       </CardHeader>
 
       {/* Table */}
-      <div className="overflow-x-auto">
-        <Table>
-          <TableHeader>
-            <TableRow className="hover:bg-transparent border-b border-slate-100 dark:border-white/5">
-              <TableHead className="w-[80px] pl-8 font-semibold text-slate-900 dark:text-slate-200">Rank</TableHead>
-              <TableHead className="font-semibold text-slate-900 dark:text-slate-200">Trader</TableHead>
-              <TableHead className="text-right font-semibold text-slate-900 dark:text-slate-200">24h Volume</TableHead>
-              <TableHead className="text-right pr-8 font-semibold text-slate-900 dark:text-slate-200">24h PnL</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {filteredEntries.length === 0 ? (
-               <TableRow>
-                 <TableCell colSpan={4} className="h-24 text-center text-slate-500">
-                   No results found.
-                 </TableCell>
-               </TableRow>
-            ) : (
-              filteredEntries.map((entry) => (
-                <TableRow 
-                  key={entry.address} 
-                  className="group hover:bg-slate-50/80 dark:hover:bg-white/[0.02] transition-colors border-b border-slate-50 dark:border-white/5 last:border-0"
+      <div className="overflow-hidden flex flex-col" style={{ height: '850px' }}>
+        <div className="overflow-x-auto flex-1 min-h-0">
+          <Table>
+            <TableHeader>
+              <TableRow className="hover:bg-transparent border-b border-slate-100 dark:border-white/5">
+                <TableHead className="w-[80px] pl-8 font-semibold text-slate-900 dark:text-slate-200">Rank</TableHead>
+                <TableHead className="font-semibold text-slate-900 dark:text-slate-200">Trader</TableHead>
+                <TableHead className="text-right font-semibold text-slate-900 dark:text-slate-200">24h Volume</TableHead>
+                <TableHead className="text-right pr-8 font-semibold text-slate-900 dark:text-slate-200">24h PnL</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {paginatedEntries.length === 0 ? (
+                 <TableRow>
+                   <TableCell colSpan={4} className="h-[750px] text-center text-slate-500">
+                     No results found.
+                   </TableCell>
+                 </TableRow>
+              ) : (
+                paginatedEntries.map((entry) => (
+                  <TableRow 
+                    key={entry.address} 
+                    className="group hover:bg-slate-50/80 dark:hover:bg-white/[0.02] transition-colors border-b border-slate-50 dark:border-white/5 last:border-0"
+                  >
+                    <TableCell className="pl-8 font-medium py-4">
+                      <RankBadge rank={entry.rank} />
+                    </TableCell>
+                    <TableCell className="py-4">
+                      <span className="font-mono text-sm text-slate-600 dark:text-slate-300 bg-slate-100/50 dark:bg-white/5 px-2.5 py-1 rounded-md ring-1 ring-black/5 dark:ring-white/5 group-hover:bg-white dark:group-hover:bg-white/10 transition-all">
+                        {maskAddress(entry.address)}
+                      </span>
+                    </TableCell>
+                    <TableCell className="text-right font-mono font-medium py-4 text-slate-700 dark:text-slate-200">
+                      {formatCurrency(entry.volume)}
+                    </TableCell>
+                    <TableCell className={`text-right pr-8 font-mono font-bold py-4 ${
+                      entry.pnl > 0 
+                        ? "text-[#00B812] dark:text-[#00B812]" 
+                        : entry.pnl < 0 
+                          ? "text-rose-500 dark:text-rose-400" 
+                          : "text-slate-400"
+                    }`}>
+                      {entry.pnl > 0 ? "+" : ""}{formatCurrency(entry.pnl)}
+                    </TableCell>
+                  </TableRow>
+                ))
+              )}
+            </TableBody>
+          </Table>
+        </div>
+        
+        {/* Pagination Controls */}
+        {filteredEntries.length > 0 && (
+            <div className="flex-shrink-0 flex items-center justify-center px-6 py-4 border-t border-slate-100 dark:border-white/5 bg-slate-50/50 dark:bg-white/[0.02]">
+              <div className="flex items-center space-x-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                  disabled={currentPage === 1}
+                  className="h-8 w-8 p-0"
                 >
-                  <TableCell className="pl-8 font-medium py-4">
-                    <RankBadge rank={entry.rank} />
-                  </TableCell>
-                  <TableCell className="py-4">
-                    <span className="font-mono text-sm text-slate-600 dark:text-slate-300 bg-slate-100/50 dark:bg-white/5 px-2.5 py-1 rounded-md ring-1 ring-black/5 dark:ring-white/5 group-hover:bg-white dark:group-hover:bg-white/10 transition-all">
-                      {maskAddress(entry.address)}
-                    </span>
-                  </TableCell>
-                  <TableCell className="text-right font-mono font-medium py-4 text-slate-700 dark:text-slate-200">
-                    {formatCurrency(entry.volume)}
-                  </TableCell>
-                  <TableCell className={`text-right pr-8 font-mono font-bold py-4 ${
-                    entry.pnl > 0 
-                      ? "text-[#00B812] dark:text-[#00B812]" 
-                      : entry.pnl < 0 
-                        ? "text-rose-500 dark:text-rose-400" 
-                        : "text-slate-400"
-                  }`}>
-                    {entry.pnl > 0 ? "+" : ""}{formatCurrency(entry.pnl)}
-                  </TableCell>
-                </TableRow>
-              ))
-            )}
-          </TableBody>
-        </Table>
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+                <div className="text-sm font-medium px-2">
+                   Page {currentPage} of {totalPages}
+                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                  disabled={currentPage === totalPages}
+                  className="h-8 w-8 p-0"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+        )}
       </div>
     </>
   );
