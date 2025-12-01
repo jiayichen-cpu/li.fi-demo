@@ -126,3 +126,27 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+@layer utilities {
+  .text-shimmer {
+    background: linear-gradient(
+      to right,
+      #00B812 20%,
+      #16a34a 40%,
+      #4ade80 50%,
+      #16a34a 60%,
+      #00B812 80%
+    );
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: shine 4s linear infinite;
+  }
+
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
+}

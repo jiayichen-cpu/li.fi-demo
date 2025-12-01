@@ -39,7 +39,7 @@ export default async function Home() {
 
                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
                     OneKey Perps: <br/>
-                    <span className="text-[#00B812]">Chase Your First 100x Return</span>
+                    <span className="text-shimmer">Chase Your First 100x Return</span>
                  </h1>
                  
                  <p className="text-base text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed">
