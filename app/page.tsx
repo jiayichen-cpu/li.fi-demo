@@ -2,8 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { Card, CardContent } from "@/components/ui/card";
 import { LeaderboardTable } from "@/components/LeaderboardTable";
 import { EventDetails } from "@/components/EventDetails";
-import { Countdown } from "@/components/Countdown";
-import { EventBadge } from "@/components/EventBadge";
+import { HeroSection } from "@/components/HeroSection";
 
 interface LeaderboardEntry {
   rank: number;
@@ -28,33 +27,7 @@ export default async function Home() {
   return (
     <main className="min-h-screen bg-[#F5F5F7] dark:bg-[#000000] text-slate-900 dark:text-slate-100 font-sans selection:bg-emerald-500/30">
       
-      {/* Hero Section - Light Theme & Left Aligned */}
-      <div className="relative bg-white dark:bg-[#111111] border-b border-slate-200 dark:border-white/5 overflow-hidden">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-10 md:py-12">
-           <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-8 items-center">
-              
-              {/* Left: Text Content */}
-              <div className="text-left space-y-4">
-                 <EventBadge />
-
-                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
-                    OneKey Perps: <br/>
-                    <span className="text-shimmer">Chase Your First 100x Return</span>
-                 </h1>
-                 
-                 <p className="text-base text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed">
-                    Join the 7-day trading challenge. Trade or share strategies to win OneKey Classic 1S and exclusive merchandise.
-                 </p>
-              </div>
-
-              {/* Right: Countdown Timer */}
-              <div className="flex flex-col items-start md:items-end space-y-4">
-                 <Countdown />
-              </div>
-
-           </div>
-        </div>
-      </div>
+      <HeroSection />
 
       {/* Content Grid */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">

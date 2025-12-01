@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useLanguage } from '@/lib/i18n';
 
 // Time configuration (UTC)
 // Start: 2025-12-03 00:00:00 UTC+8 -> 2025-12-02 16:00:00 UTC
@@ -9,6 +10,7 @@ const START_TIME = new Date('2025-12-02T16:00:00Z').getTime();
 const END_TIME = new Date('2025-12-09T15:59:59Z').getTime();
 
 export function Countdown() {
+  const { t } = useLanguage();
   const [status, setStatus] = useState<'upcoming' | 'live' | 'ended'>('live');
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -58,11 +60,11 @@ export function Countdown() {
   const getTitle = () => {
     switch (status) {
       case 'upcoming':
-        return 'Activity starts in';
+        return t.countdown.starts_in;
       case 'ended':
-        return 'Activity ended';
+        return t.countdown.ended;
       default:
-        return 'Activity ends in';
+        return t.countdown.ends_in;
     }
   };
 
@@ -72,13 +74,13 @@ export function Countdown() {
         {getTitle()}
       </p>
       <div className="flex items-center gap-2 sm:gap-4 text-slate-900 dark:text-white">
-         <TimeUnit value={timeLeft.days} label="DAYS" />
+         <TimeUnit value={timeLeft.days} label={t.countdown.days} />
          <Separator />
-         <TimeUnit value={timeLeft.hours} label="HOURS" />
+         <TimeUnit value={timeLeft.hours} label={t.countdown.hours} />
          <Separator />
-         <TimeUnit value={timeLeft.minutes} label="MINS" />
+         <TimeUnit value={timeLeft.minutes} label={t.countdown.mins} />
          <Separator />
-         <TimeUnit value={timeLeft.seconds} label="SECS" />
+         <TimeUnit value={timeLeft.seconds} label={t.countdown.secs} />
       </div>
     </>
   );

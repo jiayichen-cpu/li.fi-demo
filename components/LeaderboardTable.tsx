@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useLanguage } from '@/lib/i18n';
 import {
   Table,
   TableBody,
@@ -48,6 +49,7 @@ function RankBadge({ rank }: { rank: number }) {
 }
 
 export function LeaderboardTable({ entries, lastUpdated }: { entries: LeaderboardEntry[], lastUpdated: Date | null }) {
+  const { t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 15;
@@ -74,10 +76,10 @@ export function LeaderboardTable({ entries, lastUpdated }: { entries: Leaderboar
         <div className="flex items-center justify-between w-full gap-4">
           <div className="flex flex-col justify-center">
             <CardTitle className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">
-               Daily Volume Rankings
+               {t.leaderboard.title}
             </CardTitle>
             <CardDescription className="mt-0.5 text-[10px] text-slate-400 hidden md:block">
-              Updated: {lastUpdated ? lastUpdated.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false, month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }) + " UTC+8" : "--/-- --:--"}
+              {t.leaderboard.updated} {lastUpdated ? lastUpdated.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false, month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }) + " UTC+8" : "--/-- --:--"}
             </CardDescription>
           </div>
           
@@ -86,7 +88,7 @@ export function LeaderboardTable({ entries, lastUpdated }: { entries: Leaderboar
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
             <input
               type="text"
-              placeholder="Search by address..."
+              placeholder={t.leaderboard.search_placeholder}
               value={searchQuery}
               onChange={handleSearch}
               className="h-10 w-full rounded-xl border-0 bg-slate-100 pl-10 text-sm text-slate-900 placeholder:text-slate-500 focus:ring-2 focus:ring-inset focus:ring-[#00B812] dark:bg-white/5 dark:text-slate-100 dark:placeholder:text-slate-400"
@@ -101,17 +103,17 @@ export function LeaderboardTable({ entries, lastUpdated }: { entries: Leaderboar
           <Table>
             <TableHeader>
               <TableRow className="hover:bg-transparent border-b border-slate-100 dark:border-white/5">
-                <TableHead className="w-[80px] pl-8 font-semibold text-slate-900 dark:text-slate-200 h-[44px]">Rank</TableHead>
-                <TableHead className="font-semibold text-slate-900 dark:text-slate-200 h-[44px]">Trader</TableHead>
-                <TableHead className="text-right font-semibold text-slate-900 dark:text-slate-200 h-[44px]">24h Volume</TableHead>
-                <TableHead className="text-right pr-8 font-semibold text-slate-900 dark:text-slate-200 h-[44px]">24h PnL</TableHead>
+                <TableHead className="w-[80px] pl-8 font-semibold text-slate-900 dark:text-slate-200 h-[44px]">{t.leaderboard.headers.rank}</TableHead>
+                <TableHead className="font-semibold text-slate-900 dark:text-slate-200 h-[44px]">{t.leaderboard.headers.trader}</TableHead>
+                <TableHead className="text-right font-semibold text-slate-900 dark:text-slate-200 h-[44px]">{t.leaderboard.headers.volume}</TableHead>
+                <TableHead className="text-right pr-8 font-semibold text-slate-900 dark:text-slate-200 h-[44px]">{t.leaderboard.headers.pnl}</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {paginatedEntries.length === 0 ? (
                  <TableRow className="h-[900px]">
                    <TableCell colSpan={4} className="text-center text-slate-500">
-                     No results found.
+                     {t.leaderboard.no_results}
                    </TableCell>
                  </TableRow>
               ) : (
@@ -172,7 +174,7 @@ export function LeaderboardTable({ entries, lastUpdated }: { entries: Leaderboar
                   <ChevronLeft className="h-4 w-4" />
                 </Button>
                 <div className="text-sm font-medium px-2">
-                   Page {currentPage} of {totalPages}
+                   {t.leaderboard.page} {currentPage} {t.leaderboard.of} {totalPages}
                 </div>
                 <Button
                   variant="outline"
