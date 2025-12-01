@@ -24,7 +24,7 @@ export function EventDetails() {
                 <h4 className="font-bold text-slate-900 dark:text-white text-sm">
                   Trade to join the prize draw
                 </h4>
-                <p className="text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                   Complete two Perps trades within a cycle to automatically
                   enter the current draw. Each cycle selects{" "}
                   <strong className="text-slate-900 dark:text-white">
@@ -33,10 +33,10 @@ export function EventDetails() {
                   , who will receive a set of OneKey merchandise.
                 </p>
                 <div className="flex flex-wrap gap-2 pt-1">
-                  <span className="text-[10px] font-medium px-2.5 py-1 rounded-md bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">
+                  <span className="text-xs font-medium px-2.5 py-1 rounded-md bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">
                     Cycle 1: Dec 3-5
                   </span>
-                  <span className="text-[10px] font-medium px-2.5 py-1 rounded-md bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">
+                  <span className="text-xs font-medium px-2.5 py-1 rounded-md bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">
                     Cycle 2: Dec 6-9
                   </span>
                 </div>
@@ -49,12 +49,12 @@ export function EventDetails() {
                 <h4 className="font-bold text-slate-900 dark:text-white text-sm">
                   Share your content to join the draw
                 </h4>
-                <p className="text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                   Post content related to your OneKey Perps trading logic,
                   strategies, or trade reviews on social media with your
                   referral link/image.
                 </p>
-                <ul className="text-[11px] text-slate-600 dark:text-slate-400 space-y-1 list-disc pl-4 marker:text-slate-400 mt-2">
+                <ul className="text-xs text-slate-600 dark:text-slate-400 space-y-1 list-disc pl-4 marker:text-slate-400 mt-2">
                   <li>
                     <span className="font-medium text-slate-900 dark:text-white">
                       1 Winner:
@@ -77,7 +77,7 @@ export function EventDetails() {
                 <h4 className="font-bold text-slate-900 dark:text-white text-sm">
                   Trading volume ranking rewards
                 </h4>
-                <p className="text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                   After the event ends, the{" "}
                   <strong className="text-slate-900 dark:text-white">
                     top five users
@@ -88,7 +88,7 @@ export function EventDetails() {
                   </strong>
                   .
                 </p>
-                <p className="text-[11px] text-slate-400 italic pt-0.5">
+                <p className="text-xs text-slate-400 italic pt-0.5">
                   * Final ranking will be published here after the event ends.
                 </p>
               </div>
@@ -112,17 +112,17 @@ export function EventDetails() {
               </AccordionTrigger>
               <AccordionContent className="px-8 pb-4 pt-0">
                 <div className="space-y-2">
-                  <ul className="space-y-1.5 text-[13px] text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
+                  <ul className="space-y-1.5 text-sm text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
                     <li>Download or open the OneKey App.</li>
                     <li>Go to the Perps trading page from the home screen.</li>
                     <li>Deposit funds and open a position.</li>
                     <li>Complete two trades within a cycle to join the draw.</li>
                   </ul>
                   <div className="mt-3 pt-3 border-t border-slate-100 dark:border-white/10">
-                    <p className="text-[11px] font-medium text-slate-900 dark:text-white mb-2">
+                    <p className="text-xs font-medium text-slate-900 dark:text-white mb-2">
                       Reference resources:
                     </p>
-                    <ul className="space-y-1 text-[11px] text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
+                    <ul className="space-y-1 text-xs text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
                       <li>
                         <a 
                           href="https://onekey.so/download/" 
@@ -146,7 +146,7 @@ export function EventDetails() {
               </AccordionTrigger>
               <AccordionContent className="px-8 pb-4 pt-0">
                 <div className="space-y-2">
-                  <ul className="space-y-1.5 text-[13px] text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
+                  <ul className="space-y-1.5 text-sm text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
                     <li>(Optional) Open any Perps position.</li>
                     <li>Go to the referral page to generate your referral link or code.</li>
                     <li>Publish your trading logic, reviews, screenshots, or opinions on platforms such as X, Telegram, Discord, Xiaohongshu, or WeChat.</li>
@@ -211,18 +211,18 @@ export function EventDetails() {
               </AccordionTrigger>
               <AccordionContent className="px-8 pb-4 pt-0">
                 <div className="space-y-2">
-                  <p className="text-[13px] text-slate-600 dark:text-slate-400">
+                  <p className="text-sm text-slate-600 dark:text-slate-400">
                     After the event, we will publish:
                   </p>
-                  <ul className="space-y-1 text-[13px] text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
+                  <ul className="space-y-1 text-sm text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
                     <li>The cycle draw winners.</li>
                     <li>Content selection results.</li>
                     <li>The top trading volume rankings.</li>
                   </ul>
-                  <p className="text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                     Winners may claim their prizes by sending a direct message to the official X account or by submitting a support ticket.
                   </p>
-                  <p className="text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                     You will need to provide a screenshot of the corresponding account address inside the OneKey App.
                   </p>
                 </div>
