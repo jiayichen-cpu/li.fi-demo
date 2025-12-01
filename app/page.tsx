@@ -30,7 +30,7 @@ export default async function Home() {
       <HeroSection />
 
       {/* Content Grid */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4 pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Left Column: Rules & FAQ (4/12) */}
