@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "OneKey Perps Trade & Win",
+  title: "OneKey Perps: Chase Your First 100x Return",
   description: "Join the 7-day trading challenge. Trade or share strategies to win OneKey Classic 1S and exclusive merchandise.",
   icons: {
     icon: '/onekey_icon_default_solid_green_black.svg',

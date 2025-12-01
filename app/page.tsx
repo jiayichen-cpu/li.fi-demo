@@ -30,7 +30,7 @@ export default async function Home() {
       {/* Hero Section - Light Theme & Left Aligned */}
       <div className="relative bg-white dark:bg-[#111111] border-b border-slate-200 dark:border-white/5 overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-10 md:py-12">
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+           <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-8 items-center">
               
               {/* Left: Text Content */}
               <div className="text-left space-y-4">
@@ -39,12 +39,12 @@ export default async function Home() {
                     <span>Live Event</span>
                  </div>
 
-                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
-                    OneKey Perps <br/>
-                    <span className="text-[#00B812]">Trade & Win</span>
+                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+                    OneKey Perps: <br/>
+                    <span className="text-[#00B812]">Chase Your First 100x Return</span>
                  </h1>
                  
-                 <p className="text-base text-slate-500 dark:text-slate-400 max-w-lg leading-relaxed">
+                 <p className="text-base text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed">
                     Join the 7-day trading challenge. Trade or share strategies to win OneKey Classic 1S and exclusive merchandise.
                  </p>
               </div>

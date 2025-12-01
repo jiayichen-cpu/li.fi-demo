@@ -112,17 +112,17 @@ export function EventDetails() {
               </AccordionTrigger>
               <AccordionContent className="px-8 pb-4 pt-0">
                 <div className="space-y-2">
-                  <ul className="space-y-1.5 text-sm text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
+                  <ul className="space-y-1.5 text-[13px] text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
                     <li>Download or open the OneKey App.</li>
                     <li>Go to the Perps trading page from the home screen.</li>
                     <li>Deposit funds and open a position.</li>
                     <li>Complete two trades within a cycle to join the draw.</li>
                   </ul>
                   <div className="mt-3 pt-3 border-t border-slate-100 dark:border-white/10">
-                    <p className="text-xs font-medium text-slate-900 dark:text-white mb-2">
+                    <p className="text-[13px] font-medium text-slate-900 dark:text-white mb-2">
                       Reference resources:
                     </p>
-                    <ul className="space-y-1 text-xs text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
+                    <ul className="space-y-1 text-[13px] text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
                       <li>
                         <a 
                           href="https://onekey.so/download/" 
@@ -146,59 +146,56 @@ export function EventDetails() {
               </AccordionTrigger>
               <AccordionContent className="px-8 pb-4 pt-0">
                 <div className="space-y-2">
-                  <ul className="space-y-1.5 text-sm text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
+                  <ul className="space-y-1.5 text-[13px] text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
                     <li>(Optional) Open any Perps position.</li>
-                    <li>Go to the referral page to generate your referral link or code.</li>
+                    <li>
+                      Go to the Perps page and copy your invite link. You can find the full details in the{" "}
+                      <a 
+                        href="https://help.onekey.so/en/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-slate-900 dark:text-white font-medium hover:underline"
+                      >
+                        Help Center
+                      </a>.
+                      <br />
+                      <span className="italic text-slate-500 dark:text-slate-400">
+                        Note: If you have not created a referral code before, the page will guide you to complete the setup first.
+                      </span>
+                    </li>
                     <li>Publish your trading logic, reviews, screenshots, or opinions on platforms such as X, Telegram, Discord, Xiaohongshu, or WeChat.</li>
                     <li>
-                      Posts on X must include the hashtag{" "}
+                      If posting on X, remember to include the tag{" "}
                       <a 
                         href="https://x.com/hashtag/OneKeyPerps" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="font-bold text-slate-900 dark:text-white hover:underline"
+                        className="font-medium text-slate-900 dark:text-white hover:underline"
                       >
                         #OneKeyPerps
                       </a>{" "}
-                      and tag{" "}
-                      <a 
-                        href="https://x.com/OneKeyCN" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="font-bold text-slate-900 dark:text-white hover:underline"
-                      >
-                        @OneKeyCN
-                      </a>{" "}
+                      and mention{" "}
                       <a 
                         href="https://x.com/OneKeyHQ" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="font-bold text-slate-900 dark:text-white hover:underline"
+                        className="font-medium text-slate-900 dark:text-white hover:underline"
                       >
                         @OneKeyHQ
                       </a>.
                     </li>
                     <li>Your post must contain your referral link or a position share image.</li>
                     <li>
-                      After publishing, send your post to{" "}
-                      <a 
-                        href="https://x.com/OneKeyCN" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="font-bold text-slate-900 dark:text-white hover:underline"
-                      >
-                        @OneKeyCN
-                      </a>{" "}
-                      or{" "}
+                      After posting, send your content link via DM to{" "}
                       <a 
                         href="https://x.com/OneKeyHQ" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="font-bold text-slate-900 dark:text-white hover:underline"
+                        className="font-medium text-slate-900 dark:text-white hover:underline"
                       >
                         @OneKeyHQ
                       </a>{" "}
-                      via direct message on X, or submit it to customer support on the official Help Center.
+                      on X so we can record your participation.
                     </li>
                   </ul>
                 </div>
@@ -211,20 +208,48 @@ export function EventDetails() {
               </AccordionTrigger>
               <AccordionContent className="px-8 pb-4 pt-0">
                 <div className="space-y-2">
-                  <p className="text-sm text-slate-600 dark:text-slate-400">
-                    After the event, we will publish:
+                  <p className="text-[13px] text-slate-600 dark:text-slate-400">
+                    After the event ends, we will publish the following in this page:
                   </p>
-                  <ul className="space-y-1 text-sm text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
+                  <ul className="space-y-1 text-[13px] text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
                     <li>The cycle draw winners.</li>
                     <li>Content selection results.</li>
                     <li>The top trading volume rankings.</li>
                   </ul>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <p className="text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed">
                     Winners may claim their prizes by sending a direct message to the official X account or by submitting a support ticket.
                   </p>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    You will need to provide a screenshot of the corresponding account address inside the OneKey App.
-                  </p>
+                  <div className="text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed space-y-2">
+                    <p className="font-medium text-slate-900 dark:text-white">
+                      Please include your signature information from the App.
+                    </p>
+                    <ol className="list-decimal pl-5 space-y-1">
+                      <li>Open the OneKey App → tap the top-right &ldquo;More&rdquo; → &ldquo;Sign & verify message&rdquo;</li>
+                      <li>Enter &ldquo;onekey&rdquo; → tap &ldquo;Sign&rdquo; and copy the signature</li>
+                      <li>
+                        Send this signature in your message to{" "}
+                        <a 
+                          href="https://x.com/OneKeyHQ" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="font-medium text-slate-900 dark:text-white hover:underline"
+                        >
+                          @OneKeyHQ
+                        </a>
+                      </li>
+                    </ol>
+                    <p>
+                      You can find the full details in the{" "}
+                      <a 
+                        href="https://help.onekey.so/en/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-slate-900 dark:text-white font-medium hover:underline"
+                      >
+                        Help Center
+                      </a>.
+                    </p>
+                  </div>
                 </div>
               </AccordionContent>
             </AccordionItem>
