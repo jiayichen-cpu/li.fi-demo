@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { LeaderboardTable } from "@/components/LeaderboardTable";
 import { EventDetails } from "@/components/EventDetails";
 import { Countdown } from "@/components/Countdown";
+import { EventBadge } from "@/components/EventBadge";
 
 interface LeaderboardEntry {
   rank: number;
@@ -34,10 +35,7 @@ export default async function Home() {
               
               {/* Left: Text Content */}
               <div className="text-left space-y-4">
-                 <div className="inline-flex items-center gap-2 rounded-full bg-slate-100 dark:bg-white/10 px-2.5 py-0.5 text-xs font-medium text-slate-600 dark:text-slate-300">
-                    <div className="h-1.5 w-1.5 rounded-full bg-[#00B812] animate-pulse" />
-                    <span>Live Event</span>
-                 </div>
+                 <EventBadge />
 
                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
                     OneKey Perps: <br/>
@@ -51,9 +49,6 @@ export default async function Home() {
 
               {/* Right: Countdown Timer */}
               <div className="flex flex-col items-start md:items-end space-y-4">
-                 <p className="text-sm font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500">
-                    Activity ends in
-                 </p>
                  <Countdown />
               </div>
 

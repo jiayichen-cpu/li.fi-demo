@@ -77,7 +77,7 @@ export function LeaderboardTable({ entries, lastUpdated }: { entries: Leaderboar
                Daily Volume Rankings
             </CardTitle>
             <CardDescription className="mt-0.5 text-[10px] text-slate-400 hidden md:block">
-              Updated: {lastUpdated ? lastUpdated.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false, month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }) : "--/-- --:--"}
+              Updated: {lastUpdated ? lastUpdated.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false, month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }) + " UTC+8" : "--/-- --:--"}
             </CardDescription>
           </div>
           

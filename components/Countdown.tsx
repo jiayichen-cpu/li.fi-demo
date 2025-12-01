@@ -2,7 +2,14 @@
 
 import { useEffect, useState } from 'react';
 
+// Time configuration (UTC)
+// Start: 2025-12-03 00:00:00 UTC+8 -> 2025-12-02 16:00:00 UTC
+// End: 2025-12-09 23:59:59 UTC+8 -> 2025-12-09 15:59:59 UTC
+const START_TIME = new Date('2025-12-02T16:00:00Z').getTime();
+const END_TIME = new Date('2025-12-09T15:59:59Z').getTime();
+
 export function Countdown() {
+  const [status, setStatus] = useState<'upcoming' | 'live' | 'ended'>('live');
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -11,14 +18,28 @@ export function Countdown() {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2025-12-10T23:59:59Z').getTime();
-
     const interval = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
+      const now = Date.now();
+      let targetDate = END_TIME;
+      let currentStatus: 'upcoming' | 'live' | 'ended' = 'live';
 
+      if (now < START_TIME) {
+        targetDate = START_TIME;
+        currentStatus = 'upcoming';
+      } else if (now > END_TIME) {
+        currentStatus = 'ended';
+      }
+
+      setStatus(currentStatus);
+
+      if (currentStatus === 'ended') {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
+      }
+
+      const distance = targetDate - now;
       if (distance < 0) {
-        clearInterval(interval);
+        // Should be handled by status check, but safe guard
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
         return;
       }
@@ -34,16 +55,32 @@ export function Countdown() {
     return () => clearInterval(interval);
   }, []);
 
+  const getTitle = () => {
+    switch (status) {
+      case 'upcoming':
+        return 'Activity starts in';
+      case 'ended':
+        return 'Activity ended';
+      default:
+        return 'Activity ends in';
+    }
+  };
+
   return (
-    <div className="flex items-center gap-2 sm:gap-4 text-slate-900 dark:text-white">
-       <TimeUnit value={timeLeft.days} label="DAYS" />
-       <Separator />
-       <TimeUnit value={timeLeft.hours} label="HOURS" />
-       <Separator />
-       <TimeUnit value={timeLeft.minutes} label="MINS" />
-       <Separator />
-       <TimeUnit value={timeLeft.seconds} label="SECS" />
-    </div>
+    <>
+      <p className="text-sm font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500">
+        {getTitle()}
+      </p>
+      <div className="flex items-center gap-2 sm:gap-4 text-slate-900 dark:text-white">
+         <TimeUnit value={timeLeft.days} label="DAYS" />
+         <Separator />
+         <TimeUnit value={timeLeft.hours} label="HOURS" />
+         <Separator />
+         <TimeUnit value={timeLeft.minutes} label="MINS" />
+         <Separator />
+         <TimeUnit value={timeLeft.seconds} label="SECS" />
+      </div>
+    </>
   );
 }
 
