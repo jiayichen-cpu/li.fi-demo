@@ -1,7 +1,6 @@
 'use client';
 
 import { Countdown } from "@/components/Countdown";
-import { EventBadge } from "@/components/EventBadge";
 import { useLanguage } from "@/lib/i18n";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
@@ -19,11 +18,21 @@ export function HeroSection() {
             
             {/* Left: Text Content */}
             <div className="text-left space-y-4">
-               <EventBadge />
-
-               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+               <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
                   {t.hero.title_prefix} <br/>
-                  <span className="text-shimmer">{t.hero.title_suffix}</span>
+                  <span 
+                    style={{
+                      backgroundImage: 'linear-gradient(to right, #00B812 20%, #16a34a 40%, #4ade80 50%, #16a34a 60%, #00B812 80%)',
+                      backgroundSize: '200% auto',
+                      animation: 'shine 4s linear infinite',
+                      WebkitBackgroundClip: 'text',
+                      backgroundClip: 'text',
+                      color: 'transparent',
+                      display: 'inline-block' 
+                    }}
+                  >
+                    {t.hero.title_suffix}
+                  </span>
                </h1>
                
                <p className="text-base text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed">
