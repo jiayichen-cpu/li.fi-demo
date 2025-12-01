@@ -20,7 +20,7 @@ export function HeroSection() {
             
             {/* Left: Text Content */}
             <div className="text-left space-y-4">
-               <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+               <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
                   {t.hero.title_prefix} <br/>
                   <span 
                     style={{
