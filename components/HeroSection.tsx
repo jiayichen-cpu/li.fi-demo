@@ -8,9 +8,11 @@ export function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <div className="relative bg-white dark:bg-[#111111] border-b border-slate-200 dark:border-white/5 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-10 md:py-12">
-         <div className="absolute top-4 right-4 lg:top-8 lg:right-8 z-10">
+    <div className="bg-gradient-to-b from-[#F0FDF4] to-white dark:from-[#00B812]/10 dark:to-[#111111] border-b border-slate-200 dark:border-white/5 overflow-hidden">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 py-10 md:py-12">
+         {/* Header: Logo & Language Switcher */}
+         <div className="flex justify-between items-center mb-12 lg:mb-8">
+            <img src="/onekey_icon_default_solid_green_black.svg" alt="OneKey Logo" className="h-8 w-8" />
             <LanguageSwitcher />
          </div>
          
