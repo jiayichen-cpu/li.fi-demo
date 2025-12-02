@@ -78,12 +78,13 @@ export const dictionary = {
       q2: {
         title: "Q2. How do I participate through content sharing?",
         step1: "(Optional) Open any Perps position.",
-        step2_prefix: "Go to the Perps page and copy your invite link. You can find the full details in the",
-        step2_link: "Help Center",
+        step2_prefix: "Go to the Perps page and copy your invite link. You can find the full details in the ",
+        step2_link: "Help Center.",
         step2_note: "Note: If you have not created a referral code before, the page will guide you to complete the setup first.",
         step3: "Publish your trading logic, reviews, screenshots, or opinions on platforms such as X, Telegram, Discord, Xiaohongshu, or WeChat.",
         step4_prefix: "If posting on X, remember to include the tag",
         step4_middle: "and mention",
+        step4_suffix: ".",
         step5: "Your post must contain your referral link or a position share image.",
         step6_prefix: "After posting, send your content link via DM to",
         step6_suffix: "on X so we can record your participation.",
@@ -99,15 +100,15 @@ export const dictionary = {
         sign_step1: "Open the OneKey App → tap the top-right \"More\" → \"Sign & verify message\"",
         sign_step2: "Enter \"onekey\" → tap \"Sign\" and copy the signature",
         sign_step3_prefix: "Send this signature in your message to",
-        help_prefix: "You can find the full details in the",
-        help_link: "Help Center",
+        help_prefix: "You can find the full details in the ",
+        help_link: "Help Center.",
       }
     }
   },
   zh: {
     hero: {
       title_prefix: "OneKey Perps:",
-      title_suffix: "赢取首个百倍回报", // "Chase Your First 100x Return"
+      title_suffix: "开启人生的第一个 100 倍收益", // "Chase Your First 100x Return"
       description: "参与7天交易挑战。交易或分享策略，赢取 OneKey Classic 1S 和独家周边商品。",
     },
     badge: {
@@ -181,13 +182,14 @@ export const dictionary = {
       q2: {
         title: "Q2. 如何通过内容分享参与？",
         step1: "（可选）开设任意 Perps 仓位。",
-        step2_prefix: "前往 Perps 页面复制你的邀请链接。你可以在",
-        step2_link: "帮助中心",
+        step2_prefix: "前往 Perps 页面复制你的邀请链接。详情可见",
+        step2_link: "帮助中心文档。",
         step2_note: "注意：如果你之前没有创建过推荐码，页面会引导你先完成设置。",
         step3: "在 X、Telegram、Discord、小红书或微信等平台上发布你的交易逻辑、回顾、截图或观点。",
         step4_prefix: "如果在 X 上发布，请记得加上标签",
-        step4_middle: "并提及",
-        step5: "你的帖子必须包含你的推荐链接或持仓分享图片。",
+        step4_middle: "并提及", // "and mention"
+        step4_suffix: "。", // Add this new field
+        step5: "", // Hidden for Chinese
         step6_prefix: "发布后，请将内容链接私信给 X 上的",
         step6_suffix: "以便我们记录你的参与。",
       },
@@ -202,8 +204,8 @@ export const dictionary = {
         sign_step1: "打开 OneKey App → 点击右上角“更多” → “签名/验证消息”",
         sign_step2: "输入“onekey” → 点击“签名”并复制签名",
         sign_step3_prefix: "将此签名发送给",
-        help_prefix: "你可以在",
-        help_link: "帮助中心",
+        help_prefix: "详情可见",
+        help_link: "帮助中心文档。",
       }
     }
   }

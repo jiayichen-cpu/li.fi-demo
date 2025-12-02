@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useLanguage } from '@/lib/i18n';
+import { useLanguage } from "@/lib/i18n";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Accordion,
@@ -104,7 +104,10 @@ export function EventDetails() {
         </CardHeader>
         <CardContent className="p-0">
           <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1" className="border-slate-100 dark:border-white/5">
+            <AccordionItem
+              value="item-1"
+              className="border-slate-100 dark:border-white/5"
+            >
               <AccordionTrigger className="px-8 py-4 text-sm font-bold text-slate-900 dark:text-white hover:no-underline hover:bg-slate-50/50 dark:hover:bg-white/[0.02] text-left justify-start gap-2 [&>svg]:ml-auto">
                 {t.event_details.q1.title}
               </AccordionTrigger>
@@ -122,14 +125,15 @@ export function EventDetails() {
                     </p>
                     <ul className="space-y-1 text-[13px] text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
                       <li>
-                        <a 
-                          href="https://onekey.so/download/" 
-                          target="_blank" 
+                        <a
+                          href="https://onekey.so/download/"
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="text-slate-900 dark:text-white font-medium hover:underline"
                         >
                           {t.event_details.q1.ref_link}
-                        </a>.
+                        </a>
+                        .
                       </li>
                       <li>{t.event_details.q1.ref_guide}</li>
                     </ul>
@@ -138,7 +142,10 @@ export function EventDetails() {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-2" className="border-slate-100 dark:border-white/5">
+            <AccordionItem
+              value="item-2"
+              className="border-slate-100 dark:border-white/5"
+            >
               <AccordionTrigger className="px-8 py-4 text-sm font-bold text-slate-900 dark:text-white hover:no-underline hover:bg-slate-50/50 dark:hover:bg-white/[0.02] text-left justify-start gap-2 [&>svg]:ml-auto">
                 {t.event_details.q2.title}
               </AccordionTrigger>
@@ -147,15 +154,15 @@ export function EventDetails() {
                   <ul className="space-y-1.5 text-[13px] text-slate-600 dark:text-slate-400 list-disc pl-5 marker:text-slate-400">
                     <li>{t.event_details.q2.step1}</li>
                     <li>
-                      {t.event_details.q2.step2_prefix}{" "}
-                      <a 
-                        href="https://help.onekey.so/en/" 
-                        target="_blank" 
+                      {t.event_details.q2.step2_prefix}
+                      <a
+                        href="https://help.onekey.so/en/"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-slate-900 dark:text-white font-medium hover:underline"
                       >
                         {t.event_details.q2.step2_link}
-                      </a>.
+                      </a>
                       <br />
                       <span className="italic text-slate-500 dark:text-slate-400">
                         {t.event_details.q2.step2_note}
@@ -164,30 +171,33 @@ export function EventDetails() {
                     <li>{t.event_details.q2.step3}</li>
                     <li>
                       {t.event_details.q2.step4_prefix}{" "}
-                      <a 
-                        href="https://x.com/hashtag/OneKeyPerps" 
-                        target="_blank" 
+                      <a
+                        href="https://x.com/hashtag/OneKeyPerps"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="font-medium text-slate-900 dark:text-white hover:underline"
                       >
                         #OneKeyPerps
                       </a>{" "}
                       {t.event_details.q2.step4_middle}{" "}
-                      <a 
-                        href="https://x.com/OneKeyHQ" 
-                        target="_blank" 
+                      <a
+                        href="https://x.com/OneKeyHQ"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="font-medium text-slate-900 dark:text-white hover:underline"
                       >
                         @OneKeyHQ
-                      </a>.
+                      </a>
+                      {t.event_details.q2.step4_suffix}
                     </li>
-                    <li>{t.event_details.q2.step5}</li>
+                    {t.event_details.q2.step5 && (
+                      <li>{t.event_details.q2.step5}</li>
+                    )}
                     <li>
                       {t.event_details.q2.step6_prefix}{" "}
-                      <a 
-                        href="https://x.com/OneKeyHQ" 
-                        target="_blank" 
+                      <a
+                        href="https://x.com/OneKeyHQ"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="font-medium text-slate-900 dark:text-white hover:underline"
                       >
@@ -200,7 +210,10 @@ export function EventDetails() {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-3" className="border-b-0 border-slate-100 dark:border-white/5">
+            <AccordionItem
+              value="item-3"
+              className="border-b-0 border-slate-100 dark:border-white/5"
+            >
               <AccordionTrigger className="px-8 py-4 text-sm font-bold text-slate-900 dark:text-white hover:no-underline hover:bg-slate-50/50 dark:hover:bg-white/[0.02] text-left justify-start gap-2 [&>svg]:ml-auto">
                 {t.event_details.q3.title}
               </AccordionTrigger>
@@ -226,9 +239,9 @@ export function EventDetails() {
                       <li>{t.event_details.q3.sign_step2}</li>
                       <li>
                         {t.event_details.q3.sign_step3_prefix}{" "}
-                        <a 
-                          href="https://x.com/OneKeyHQ" 
-                          target="_blank" 
+                        <a
+                          href="https://x.com/OneKeyHQ"
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="font-medium text-slate-900 dark:text-white hover:underline"
                         >
@@ -237,15 +250,15 @@ export function EventDetails() {
                       </li>
                     </ol>
                     <p>
-                      {t.event_details.q3.help_prefix}{" "}
-                      <a 
-                        href="https://help.onekey.so/en/" 
-                        target="_blank" 
+                      {t.event_details.q3.help_prefix}
+                      <a
+                        href="https://help.onekey.so/en/"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-slate-900 dark:text-white font-medium hover:underline"
                       >
                         {t.event_details.q3.help_link}
-                      </a>.
+                      </a>
                     </p>
                   </div>
                 </div>
