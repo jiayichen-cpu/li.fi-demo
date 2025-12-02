@@ -73,13 +73,17 @@ export const dictionary = {
         step4: "Complete two trades within a cycle to join the draw.",
         ref_title: "Reference resources:",
         ref_link: "OneKey App download link",
-        ref_guide: "Perps quick start guide (links added after preview phase).",
+        ref_link_suffix: ".",
+        ref_guide: "Perps quick start guide",
+        ref_guide_suffix: ".",
+        ref_guide_link: "https://onekey.so/blog/en/ecosystem/three-steps-to-open-your-first-perps-position/",
       },
       q2: {
         title: "Q2. How do I participate through content sharing?",
         step1: "(Optional) Open any Perps position.",
         step2_prefix: "Go to the Perps page and copy your invite link. You can find the full details in the ",
-        step2_link: "Help Center.",
+        step2_link: "Help Center",
+        step2_suffix: ".",
         step2_note: "Note: If you have not created a referral code before, the page will guide you to complete the setup first.",
         step3: "Publish your trading logic, reviews, screenshots, or opinions on platforms such as X, Telegram, Discord, Xiaohongshu, or WeChat.",
         step4_prefix: "If posting on X, remember to include the tag",
@@ -101,7 +105,8 @@ export const dictionary = {
         sign_step2: "Enter \"onekey\" → tap \"Sign\" and copy the signature",
         sign_step3_prefix: "Send this signature in your message to",
         help_prefix: "You can find the full details in the ",
-        help_link: "Help Center.",
+        help_link: "Help Center",
+        help_suffix: ".",
       }
     }
   },
@@ -177,19 +182,23 @@ export const dictionary = {
         step4: "在一个周期内完成两笔交易以参与抽奖。",
         ref_title: "参考资源:",
         ref_link: "OneKey App 下载链接",
-        ref_guide: "Perps 快速入门指南（预览阶段后添加链接）。",
+        ref_link_suffix: "。",
+        ref_guide: "Perps 快速入门指南",
+        ref_guide_suffix: "。",
+        ref_guide_link: "https://onekey.so/blog/zh-CN/ecosystem/three-steps-to-open-your-first-perps-position/",
       },
       q2: {
         title: "Q2. 如何通过内容分享参与？",
         step1: "（可选）开设任意 Perps 仓位。",
         step2_prefix: "前往 Perps 页面复制你的邀请链接。详情可见",
-        step2_link: "帮助中心文档。",
+        step2_link: "帮助中心文档",
+        step2_suffix: "。",
         step2_note: "注意：如果你之前没有创建过推荐码，页面会引导你先完成设置。",
         step3: "在 X、Telegram、Discord、小红书或微信等平台上发布你的交易逻辑、回顾、截图或观点。",
         step4_prefix: "如果在 X 上发布，请记得加上标签",
         step4_middle: "并提及", // "and mention"
         step4_suffix: "。", // Add this new field
-        step5: "", // Hidden for Chinese
+        step5: "你的帖子必须包含你的推荐链接或持仓分享图片。", // Revert to original to fix missing key issue, but we control display in component
         step6_prefix: "发布后，请将内容链接私信给 X 上的",
         step6_suffix: "以便我们记录你的参与。",
       },
@@ -205,7 +214,8 @@ export const dictionary = {
         sign_step2: "输入“onekey” → 点击“签名”并复制签名",
         sign_step3_prefix: "将此签名发送给",
         help_prefix: "详情可见",
-        help_link: "帮助中心文档。",
+        help_link: "帮助中心文档",
+        help_suffix: "。",
       }
     }
   }

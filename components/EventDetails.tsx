@@ -133,9 +133,19 @@ export function EventDetails() {
                         >
                           {t.event_details.q1.ref_link}
                         </a>
-                        .
+                        {t.event_details.q1.ref_link_suffix}
                       </li>
-                      <li>{t.event_details.q1.ref_guide}</li>
+                      <li>
+                        <a
+                          href={t.event_details.q1.ref_guide_link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-slate-900 dark:text-white font-medium hover:underline"
+                        >
+                          {t.event_details.q1.ref_guide}
+                        </a>
+                        {t.event_details.q1.ref_guide_suffix}
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -156,13 +166,14 @@ export function EventDetails() {
                     <li>
                       {t.event_details.q2.step2_prefix}
                       <a
-                        href="https://help.onekey.so/en/"
+                        href="https://help.onekey.so/en/articles/12979733-onekey-perps-unlock-your-first-100x-returns"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-slate-900 dark:text-white font-medium hover:underline"
                       >
                         {t.event_details.q2.step2_link}
                       </a>
+                      {t.event_details.q2.step2_suffix}
                       <br />
                       <span className="italic text-slate-500 dark:text-slate-400">
                         {t.event_details.q2.step2_note}
@@ -252,13 +263,14 @@ export function EventDetails() {
                     <p>
                       {t.event_details.q3.help_prefix}
                       <a
-                        href="https://help.onekey.so/en/"
+                        href="https://help.onekey.so/en/articles/12979733-onekey-perps-unlock-your-first-100x-returns"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-slate-900 dark:text-white font-medium hover:underline"
                       >
                         {t.event_details.q3.help_link}
                       </a>
+                      {t.event_details.q3.help_suffix}
                     </p>
                   </div>
                 </div>
