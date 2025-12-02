@@ -1,0 +1,14 @@
+.git
+.next
+.turbo
+.vscode
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-lock.yaml
+dist
+build
+coverage
+*.log
+*.sqlite
+prisma/dev.db
