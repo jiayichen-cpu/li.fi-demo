@@ -174,7 +174,7 @@ export function LeaderboardTable({ entries, lastUpdated }: { entries: Leaderboar
                   <ChevronLeft className="h-4 w-4" />
                 </Button>
                 <div className="text-sm font-medium px-2">
-                   {t.leaderboard.page} {currentPage} {t.leaderboard.of} {totalPages}
+                   {t.leaderboard.page} {currentPage} {t.leaderboard.of} {totalPages}{t.leaderboard.page_unit}
                 </div>
                 <Button
                   variant="outline"

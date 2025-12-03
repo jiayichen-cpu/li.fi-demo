@@ -34,6 +34,7 @@ export const dictionary = {
       no_results: "No results found.",
       page: "Page",
       of: "of",
+      page_unit: "",
     },
     event_details: {
       ways_to_win: "Ways to Win",
@@ -114,7 +115,7 @@ export const dictionary = {
     hero: {
       title_prefix: "OneKey Perps:",
       title_suffix: "开启人生的第一个 100 倍收益", // "Chase Your First 100x Return"
-      description: "参与7天交易挑战。交易或分享策略，赢取 OneKey Classic 1S 和独家周边商品。",
+      description: "参与 7 天交易挑战。交易或分享策略，赢取 OneKey Classic 1S 和独家周边商品。",
     },
     badge: {
       live: "活动进行中",
@@ -142,7 +143,8 @@ export const dictionary = {
       },
       no_results: "暂无数据",
       page: "第",
-      of: "页，共", // Page X of Y -> 第 X 页，共 Y 页 (needs handling in component)
+      of: "页，共",
+      page_unit: " 页",
     },
     event_details: {
       ways_to_win: "参与方式",
@@ -150,8 +152,8 @@ export const dictionary = {
         title: "交易参与抽奖",
         desc: "在一个周期内完成两笔 Perps 交易即可自动进入当前抽奖。每个周期抽取三名获奖者，获得一套 OneKey 周边。",
         cycles: {
-          c1: "第一期: 12月3-5日",
-          c2: "第二期: 12月6-9日",
+          c1: "第一期: 12 月 3-5 日",
+          c2: "第二期: 12 月 6-9 日",
         },
       },
       method_2: {
