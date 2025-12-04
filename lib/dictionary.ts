@@ -42,8 +42,8 @@ export const dictionary = {
         title: "Trade to join the prize draw",
         desc: "Complete two Perps trades within a cycle to automatically enter the current draw. Each cycle selects three winners, who will receive a set of OneKey merchandise.",
         cycles: {
-          c1: "Cycle 1: Dec 3-5",
-          c2: "Cycle 2: Dec 6-9",
+          c1: "Cycle 1: Dec 5 - 7",
+          c2: "Cycle 2: Dec 8 - 11",
         },
       },
       method_2: {
@@ -152,8 +152,8 @@ export const dictionary = {
         title: "交易参与抽奖",
         desc: "在一个周期内完成两笔 Perps 交易即可自动进入当前抽奖。每个周期抽取三名获奖者，获得一套 OneKey 周边。",
         cycles: {
-          c1: "第一期: 12 月 3-5 日",
-          c2: "第二期: 12 月 6-9 日",
+          c1: "第一期: 12 月 5 - 7 日",
+          c2: "第二期: 12 月 8 - 11 日",
         },
       },
       method_2: {
