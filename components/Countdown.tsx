@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 import { useLanguage } from '@/lib/i18n';
 
 // Time configuration (UTC)
-// Start: 2025-12-05 00:00:00 UTC+8 -> 2025-12-04 16:00:00 UTC
-// End: 2025-12-11 23:59:59 UTC+8 -> 2025-12-11 15:59:59 UTC
-const START_TIME = new Date('2025-12-04T16:00:00Z').getTime();
-const END_TIME = new Date('2025-12-11T15:59:59Z').getTime();
+// Start: 2025-12-03 00:00:00 UTC+8 -> 2025-12-02 16:00:00 UTC
+// End: 2025-12-09 23:59:59 UTC+8 -> 2025-12-09 15:59:59 UTC
+const START_TIME = new Date('2025-12-02T16:00:00Z').getTime();
+const END_TIME = new Date('2025-12-09T15:59:59Z').getTime();
 
 export function Countdown() {
   const { t } = useLanguage();
