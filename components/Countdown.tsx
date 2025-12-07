@@ -5,9 +5,9 @@ import { useLanguage } from '@/lib/i18n';
 
 // Time configuration (UTC)
 // Start: 2025-12-03 00:00:00 UTC+8 -> 2025-12-02 16:00:00 UTC
-// End: 2025-12-09 23:59:59 UTC+8 -> 2025-12-09 15:59:59 UTC
+// End: 2025-12-12 00:00:00 UTC+8 -> 2025-12-11 16:00:00 UTC
 const START_TIME = new Date('2025-12-02T16:00:00Z').getTime();
-const END_TIME = new Date('2025-12-09T15:59:59Z').getTime();
+const END_TIME = new Date('2025-12-11T16:00:00Z').getTime();
 
 export function Countdown() {
   const { t } = useLanguage();
@@ -73,15 +73,15 @@ export function Countdown() {
       <p className="text-sm font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500">
         {getTitle()}
       </p>
-      <div className="flex items-center gap-2 sm:gap-4 text-slate-900 dark:text-white">
+    <div className="flex items-center gap-2 sm:gap-4 text-slate-900 dark:text-white">
          <TimeUnit value={timeLeft.days} label={t.countdown.days} />
-         <Separator />
+       <Separator />
          <TimeUnit value={timeLeft.hours} label={t.countdown.hours} />
-         <Separator />
+       <Separator />
          <TimeUnit value={timeLeft.minutes} label={t.countdown.mins} />
-         <Separator />
+       <Separator />
          <TimeUnit value={timeLeft.seconds} label={t.countdown.secs} />
-      </div>
+    </div>
     </>
   );
 }
