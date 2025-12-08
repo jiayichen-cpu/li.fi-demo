@@ -4,7 +4,7 @@ export const dictionary = {
   en: {
     hero: {
       title_prefix: "OneKey Perps:",
-      title_suffix: "Chase Your First 100x Return",
+      title_suffix: "Trade and Win",
       description: "Join the 7-day trading challenge. Trade or share strategies to win OneKey Classic 1S and exclusive merchandise.",
     },
     badge: {
@@ -114,7 +114,7 @@ export const dictionary = {
   zh: {
     hero: {
       title_prefix: "OneKey Perps:",
-      title_suffix: "开启人生的第一个 100 倍收益", // "Chase Your First 100x Return"
+      title_suffix: "开仓赢好礼",
       description: "参与 7 天交易挑战。交易或分享策略，赢取 OneKey Classic 1S 和独家周边商品。",
     },
     badge: {
