@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { LeaderboardTable } from "@/components/LeaderboardTable";
 import { EventDetails } from "@/components/EventDetails";
 import { HeroSection } from "@/components/HeroSection";
+import { ResultBanner } from "@/components/ResultBanner";
 
 interface LeaderboardEntry {
   rank: number;
@@ -27,6 +28,7 @@ export default async function PerpsPage() {
   return (
     <main className="min-h-screen bg-[#F5F5F7] dark:bg-[#000000] text-slate-900 dark:text-slate-100 font-sans selection:bg-emerald-500/30">
       
+      <ResultBanner />
       <HeroSection />
 
       {/* Content Grid */}

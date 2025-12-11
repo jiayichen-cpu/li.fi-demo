@@ -6,6 +6,7 @@ export const dictionary = {
       title_prefix: "OneKey Perps:",
       title_suffix: "Trade and Win",
       description: "Join the 7-day trading challenge. Trade or share strategies to win OneKey Classic 1S and exclusive merchandise.",
+      result_banner: "The results will be announced within 24 hours.",
     },
     badge: {
       live: "Live Event",
@@ -116,6 +117,7 @@ export const dictionary = {
       title_prefix: "OneKey Perps:",
       title_suffix: "开仓赢好礼",
       description: "参与 7 天交易挑战。交易或分享策略，赢取 OneKey Classic 1S 和独家周边商品。",
+      result_banner: "活动结果将在 24h 内公布。",
     },
     badge: {
       live: "活动进行中",
