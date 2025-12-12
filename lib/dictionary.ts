@@ -55,7 +55,7 @@ export const dictionary = {
       },
       claim_info: {
         title: "How to Claim Prize",
-        subtitle_prefix: "Learn How You Can Easily Claim Your Rewards by Following Our ",
+        subtitle_prefix: "Learn How You Can Easily Claim Your Rewards by Following Our",
         subtitle_link: "Simple Guide",
         subtitle_suffix: "",
       },

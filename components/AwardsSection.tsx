@@ -6,7 +6,7 @@ import { maskAddress } from "@/lib/utils";
 import { Trophy, Gift, Video } from "lucide-react";
 
 export function AwardsSection() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   const volumeWinners = [
     "0x0c61b057acc778517e3e49d2a052c6207397ce5b",
@@ -38,6 +38,7 @@ export function AwardsSection() {
         </CardTitle>
         <div className="mt-0.5 text-[10px] text-slate-400 flex items-center">
           <span>{t.awards.claim_info.subtitle_prefix}</span>
+          {locale === 'en' && '\u00A0'}
           <button 
             onClick={() => {
               const q3Element = document.getElementById('q3-accordion-item');
