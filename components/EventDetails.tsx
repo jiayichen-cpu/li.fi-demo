@@ -222,6 +222,7 @@ export function EventDetails() {
             </AccordionItem>
 
             <AccordionItem
+              id="q3-accordion-item"
               value="item-3"
               className="border-b-0 border-slate-100 dark:border-white/5"
             >

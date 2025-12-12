@@ -6,7 +6,7 @@ export const dictionary = {
       title_prefix: "OneKey Perps:",
       title_suffix: "Trade and Win",
       description: "Join the 7-day trading challenge. Trade or share strategies to win OneKey Classic 1S and exclusive merchandise.",
-      result_banner: "The results will be announced within 24 hours.",
+      result_banner: "The results have been announced.",
     },
     badge: {
       live: "Live Event",
@@ -23,19 +23,42 @@ export const dictionary = {
       secs: "SECS",
     },
     leaderboard: {
-      title: "Daily Volume Rankings",
+      title: "Event Volume Rankings",
       updated: "Updated:",
       search_placeholder: "Search by address...",
       headers: {
         rank: "Rank",
         trader: "Trader",
-        volume: "24h Volume",
-        pnl: "24h PnL",
+        volume: "Total Volume",
+        pnl: "Tx Count",
       },
       no_results: "No results found.",
       page: "Page",
       of: "of",
       page_unit: "",
+      event_period: "Event Period: 12/05 00:00 - 12/11 23:59 UTC+8",
+    },
+    awards: {
+      title: "Awards",
+      volume_awards: {
+        title: "Trading Volume Awards",
+        description: "The following addresses ranked in the top five by total trading volume during the event. Each winner will receive one OneKey Classic 1S.",
+      },
+      merch_awards: {
+        title: "Periodic Merch Rewards",
+        description: "Each of the following addresses will receive a OneKey merch set.",
+      },
+      content_awards: {
+        title: "Content Creation Awards",
+        classic_prize: "Classic 1S",
+        merch_prize: "OneKey merch set",
+      },
+      claim_info: {
+        title: "How to Claim Prize",
+        subtitle_prefix: "Learn How You Can Easily Claim Your Rewards by Following Our ",
+        subtitle_link: "Simple Guide",
+        subtitle_suffix: "",
+      },
     },
     event_details: {
       ways_to_win: "Ways to Win",
@@ -117,7 +140,7 @@ export const dictionary = {
       title_prefix: "OneKey Perps:",
       title_suffix: "开仓赢好礼",
       description: "参与 7 天交易挑战。交易或分享策略，赢取 OneKey Classic 1S 和独家周边商品。",
-      result_banner: "活动结果将在 24h 内公布。",
+      result_banner: "获奖结果已公布。",
     },
     badge: {
       live: "活动进行中",
@@ -134,19 +157,42 @@ export const dictionary = {
       secs: "秒",
     },
     leaderboard: {
-      title: "每日交易量排名",
+      title: "活动交易量排名",
       updated: "更新于:",
       search_placeholder: "按地址搜索...",
       headers: {
         rank: "排名",
         trader: "交易员",
-        volume: "24h 交易量",
-        pnl: "24h 盈亏",
+        volume: "总交易量",
+        pnl: "交易笔数",
       },
       no_results: "暂无数据",
       page: "第",
       of: "页，共",
       page_unit: " 页",
+      event_period: "活动时间: 12/05 00:00 - 12/11 23:59 UTC+8",
+    },
+    awards: {
+      title: "获奖名单",
+      volume_awards: {
+        title: "交易量排名奖励",
+        description: "以下地址在活动期间总交易量排名前五。每位获奖者将获得一个 OneKey Classic 1S。",
+      },
+      merch_awards: {
+        title: "周边奖励",
+        description: "以下每位获奖者将获得一套 OneKey 周边套装。",
+      },
+      content_awards: {
+        title: "内容创作奖励",
+        classic_prize: "Classic 1S",
+        merch_prize: "OneKey 周边套装",
+      },
+      claim_info: {
+        title: "如何领奖",
+        subtitle_prefix: "参考",
+        subtitle_link: "领奖教程",
+        subtitle_suffix: "，轻松领取您的奖励",
+      },
     },
     event_details: {
       ways_to_win: "参与方式",
@@ -224,4 +270,3 @@ export const dictionary = {
     }
   }
 };
-

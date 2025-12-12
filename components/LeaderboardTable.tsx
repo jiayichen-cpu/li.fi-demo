@@ -79,7 +79,7 @@ export function LeaderboardTable({ entries, lastUpdated }: { entries: Leaderboar
                {t.leaderboard.title}
             </CardTitle>
             <CardDescription className="mt-0.5 text-[10px] text-slate-400 hidden md:block">
-              {t.leaderboard.updated} {lastUpdated ? lastUpdated.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false, month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }) + " UTC+8" : "--/-- --:--"}
+              {t.leaderboard.event_period}
             </CardDescription>
           </div>
           
@@ -106,6 +106,7 @@ export function LeaderboardTable({ entries, lastUpdated }: { entries: Leaderboar
                 <TableHead className="w-[80px] pl-8 font-semibold text-slate-900 dark:text-slate-200 h-[44px]">{t.leaderboard.headers.rank}</TableHead>
                 <TableHead className="font-semibold text-slate-900 dark:text-slate-200 h-[44px]">{t.leaderboard.headers.trader}</TableHead>
                 <TableHead className="text-right font-semibold text-slate-900 dark:text-slate-200 h-[44px]">{t.leaderboard.headers.volume}</TableHead>
+                {/* Changed PnL to Count (using same 'pnl' key for simplicity or rename it) */}
                 <TableHead className="text-right pr-8 font-semibold text-slate-900 dark:text-slate-200 h-[44px]">{t.leaderboard.headers.pnl}</TableHead>
               </TableRow>
             </TableHeader>
@@ -134,14 +135,9 @@ export function LeaderboardTable({ entries, lastUpdated }: { entries: Leaderboar
                       <TableCell className="text-right font-mono font-medium h-[60px] text-slate-700 dark:text-slate-200">
                         {formatCurrency(entry.volume)}
                       </TableCell>
-                      <TableCell className={`text-right pr-8 font-mono font-bold h-[60px] ${
-                        entry.pnl > 0 
-                          ? "text-[#00B812] dark:text-[#00B812]" 
-                        : entry.pnl < 0 
-                          ? "text-rose-500 dark:text-rose-400" 
-                          : "text-slate-400"
-                      }`}>
-                        {entry.pnl > 0 ? "+" : ""}{formatCurrency(entry.pnl)}
+                      {/* Changed to plain number display for count */}
+                      <TableCell className="text-right pr-8 font-mono font-medium h-[60px] text-slate-700 dark:text-slate-200">
+                        {entry.pnl}
                       </TableCell>
                     </TableRow>
                   ))}
