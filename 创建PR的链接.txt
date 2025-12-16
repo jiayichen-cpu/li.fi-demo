@@ -1,0 +1,8 @@
+直接访问这个链接创建 PR：
+
+https://github.com/OneKeyHQ/PerpsTradingList/compare/main...jiayichen-cpu:PerpsTradingList1:main
+
+或者：
+
+https://github.com/OneKeyHQ/PerpsTradingList/pull/new/main...jiayichen-cpu:PerpsTradingList1:main
+
