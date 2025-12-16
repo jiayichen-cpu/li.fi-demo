@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono, Noto_Sans_SC } from "next/font/google";
+import "./globals.css";
+import { LanguageProvider } from "@/lib/i18n";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const notoSansSC = Noto_Sans_SC({
+  variable: "--font-noto-sans-sc",
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
+});
+
+export const metadata: Metadata = {
+  title: "OneKey × LI.FI Trading Carnival",
+  description: "Join the ultimate cross-chain trading experience. Trade, compete, and win amazing prizes in the LI.FI Trading Carnival.",
+  icons: {
+    icon: '/onekey_icon_default_solid_green_black.svg',
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${notoSansSC.variable} antialiased`}
+      >
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
+      </body>
+    </html>
+  );
+}

@@ -1,0 +1,20 @@
+# Files and directories to ignore when deploying to Vercel
+# This is similar to .gitignore but specific to Vercel deployment
+
+# Development files
+*.log
+*.tsbuildinfo
+.DS_Store
+
+# Local environment files
+.env*.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Documentation (optional - remove if you want to include docs)
+*.md
+!README.md
