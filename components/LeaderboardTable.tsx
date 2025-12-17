@@ -1,6 +1,6 @@
 'use client';
 
-import { useLanguage } from '@/lib/i18n';
+import { useLifiLanguage } from '@/lib/i18n-lifi';
 import {
   Table,
   TableBody,
@@ -38,11 +38,13 @@ function RankBadge({ rank }: { rank: number }) {
   return <span className="pl-1.5 font-mono text-slate-500 text-sm">{rank}</span>;
 }
 
-export function LeaderboardTable() {
-  const { t } = useLanguage();
+export function LifiLeaderboardTable() {
+  const { t, locale } = useLifiLanguage();
 
   const formatDate = (date: Date) => {
-    return date.toLocaleString('zh-CN', { 
+    // Use the user's locale based on current language setting
+    const dateLocale = locale === 'zh' ? 'zh-CN' : 'en-US';
+    return date.toLocaleString(dateLocale, { 
       month: '2-digit', 
       day: '2-digit',
       hour: '2-digit',

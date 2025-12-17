@@ -42,7 +42,10 @@ export async function fetchDailyFills(builderAddress: string): Promise<Hydromanc
   let cursor: string | undefined = undefined;
   let hasMore = true;
 
-  console.log(`Fetching fills for builder ${builderAddress} from ${new Date(startTime).toISOString()} to ${new Date(endTime).toISOString()}`);
+  // Only log in development to avoid leaking sensitive builder address in production logs
+  if (process.env.NODE_ENV === 'development') {
+    console.log(`Fetching fills for builder ${builderAddress} from ${new Date(startTime).toISOString()} to ${new Date(endTime).toISOString()}`);
+  }
 
   while (hasMore) {
     try {
@@ -69,14 +72,16 @@ export async function fetchDailyFills(builderAddress: string): Promise<Hydromanc
 
       if (!response.ok) {
         const errorText = await response.text();
-        console.error("Hydromancer API error:", response.status, errorText);
-        throw new Error(`Hydromancer API error: ${response.status} ${errorText}`);
+        // Don't log full error text in production to avoid leaking sensitive API responses
+        console.error("Hydromancer API error:", response.status);
+        throw new Error(`Hydromancer API error: ${response.status}`);
       }
 
       const fills: HydromancerFill[] = await response.json();
 
       if (!Array.isArray(fills)) {
-        console.error("Unexpected response format:", fills);
+        // Don't log full response in production to avoid leaking sensitive data
+        console.error("Unexpected response format from Hydromancer API");
         throw new Error("Unexpected response format from Hydromancer API");
       }
 
@@ -118,7 +123,8 @@ export async function fetchDailyFills(builderAddress: string): Promise<Hydromanc
       await new Promise(resolve => setTimeout(resolve, 200)); 
 
     } catch (error) {
-      console.error("Error fetching fills:", error);
+      // Log error without exposing sensitive details
+      console.error("Error fetching fills from Hydromancer API");
       throw error;
     }
   }
@@ -149,7 +155,10 @@ export async function fetchUserPnl(userAddress: string): Promise<number> {
     });
 
     if (!response.ok) {
-      console.error(`Failed to fetch PnL for ${userAddress}: ${response.status}`);
+      // Don't log user addresses in production
+      if (process.env.NODE_ENV === 'development') {
+        console.error(`Failed to fetch PnL for ${userAddress}: ${response.status}`);
+      }
       return 0;
     }
 
@@ -183,7 +192,10 @@ export async function fetchUserPnl(userAddress: string): Promise<number> {
     return parseFloat(lastEntry[1]);
 
   } catch (error) {
-    console.error(`Error fetching PnL for ${userAddress}:`, error);
+    // Don't log user addresses in production
+    if (process.env.NODE_ENV === 'development') {
+      console.error(`Error fetching PnL for ${userAddress}:`, error);
+    }
     return 0;
   }
 }

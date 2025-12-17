@@ -1,13 +1,14 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useLifiLanguage } from '@/lib/i18n-lifi';
+import { useLanguage } from '@/lib/i18n';
 
-// 目标时间：2025-12-31 23:59:00 UTC+8 = 2025-12-31 15:59:00 UTC
-const END_TIME = new Date('2025-12-31T15:59:00Z').getTime();
+// Perps countdown - adjust dates as needed
+// Target time: 2024-12-31 23:59:59 UTC (update as needed)
+const END_TIME = new Date('2024-12-31T23:59:59Z').getTime();
 
-export function LifiCountdown() {
-  const { t } = useLifiLanguage();
+export function PerpsCountdown() {
+  const { t } = useLanguage();
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -17,8 +18,7 @@ export function LifiCountdown() {
   const [isEnded, setIsEnded] = useState(false);
 
   useEffect(() => {
-    // Initial calculation
-    const calculateTime = () => {
+    const interval = setInterval(() => {
       const now = Date.now();
       const distance = END_TIME - now;
 
@@ -35,20 +35,9 @@ export function LifiCountdown() {
         minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
         seconds: Math.floor((distance % (1000 * 60)) / 1000)
       });
-    };
+    }, 1000);
 
-    // Calculate immediately
-    calculateTime();
-
-    // Then update every second
-    const interval = setInterval(calculateTime, 1000);
-
-    // Cleanup: ensure interval is cleared on unmount
-    return () => {
-      if (interval) {
-        clearInterval(interval);
-      }
-    };
+    return () => clearInterval(interval);
   }, []);
 
   if (isEnded) {
@@ -108,3 +97,4 @@ function TimeUnit({ value, label }: { value: number, label: string }) {
     </div>
   );
 }
+

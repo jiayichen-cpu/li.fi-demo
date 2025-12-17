@@ -9,22 +9,38 @@ type LanguageContextType = {
   t: typeof dictionary['en'];
 };
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocale] = useState<Locale>('en');
 
   // Persist language preference
+  // Check for SSR safety - localStorage is only available in browser
   useEffect(() => {
-    const stored = localStorage.getItem('language') as Locale;
-    if (stored && (stored === 'en' || stored === 'zh')) {
-      setLocale(stored);
+    if (typeof window !== 'undefined') {
+      try {
+        const stored = localStorage.getItem('language') as Locale;
+        if (stored && (stored === 'en' || stored === 'zh')) {
+          setLocale(stored);
+        }
+      } catch (error) {
+        // localStorage might be disabled in privacy mode
+        console.warn('Failed to read language preference from localStorage');
+      }
     }
   }, []);
 
   const handleSetLocale = (newLocale: Locale) => {
     setLocale(newLocale);
-    localStorage.setItem('language', newLocale);
+    // Safely set localStorage with error handling
+    if (typeof window !== 'undefined') {
+      try {
+        localStorage.setItem('language', newLocale);
+      } catch (error) {
+        // localStorage might be disabled in privacy mode
+        console.warn('Failed to save language preference to localStorage');
+      }
+    }
   };
 
   const value = {
@@ -47,3 +63,4 @@ export function useLanguage() {
   }
   return context;
 }
+

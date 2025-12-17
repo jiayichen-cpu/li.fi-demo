@@ -14,13 +14,15 @@ RUN npm ci
 FROM deps AS builder
 COPY . .
 # 用构建时的 env/arg 生成最新静态资源
-ARG DATABASE_URL=postgresql://user:password@localhost:5432/db?schema=public
+# DATABASE_URL should be provided via build args, not hardcoded
+ARG DATABASE_URL
 ENV DATABASE_URL=${DATABASE_URL}
 RUN npm run build
 
 # 仅安装生产依赖，避免把 builder 的 node_modules 整包带入
 FROM base AS prod-deps
-ARG DATABASE_URL=postgresql://user:password@localhost:5432/db?schema=public
+# DATABASE_URL should be provided via build args, not hardcoded
+ARG DATABASE_URL
 ENV DATABASE_URL=${DATABASE_URL}
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev

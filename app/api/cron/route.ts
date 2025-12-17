@@ -16,12 +16,19 @@ export async function GET(request: NextRequest) {
         return new NextResponse('ONEKEY_BUILDER_ADDRESS not configured', { status: 500 });
     }
 
-    console.log('Starting Cron Job: Fetching daily fills...');
+    // Only log in development to avoid leaking sensitive information in production
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Starting Cron Job: Fetching daily fills...');
+    }
     const fills = await fetchDailyFills(builderAddress);
-    console.log(`Fetched ${fills.length} fills.`);
+    if (process.env.NODE_ENV === 'development') {
+      console.log(`Fetched ${fills.length} fills.`);
+    }
 
     const leaderboard = await aggregateVolume(fills);
-    console.log(`Aggregated ${leaderboard.length} users.`);
+    if (process.env.NODE_ENV === 'development') {
+      console.log(`Aggregated ${leaderboard.length} users.`);
+    }
 
     // Create snapshot
     const today = new Date();
@@ -39,7 +46,9 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({ success: true, snapshotId: snapshot.id, entriesCount: leaderboard.length });
   } catch (error) {
-    console.error('Cron job failed:', error);
+    // Log error without exposing sensitive details
+    console.error('Cron job failed');
+    // Don't expose error details in production response
     return new NextResponse('Internal Server Error', { status: 500 });
   }
 }

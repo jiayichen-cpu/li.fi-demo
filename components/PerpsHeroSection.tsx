@@ -1,11 +1,11 @@
 'use client';
 
-import { useLifiLanguage } from "@/lib/i18n-lifi";
+import { useLanguage } from "@/lib/i18n";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { LifiCountdown } from "@/components/LifiCountdown";
+import { PerpsCountdown } from "@/components/PerpsCountdown";
 
-export function LifiHeroSection() {
-  const { t } = useLifiLanguage();
+export function HeroSection() {
+  const { t } = useLanguage();
 
   return (
     <div className="bg-gradient-to-b from-[rgb(235,255,239)] to-[#F5F5F7] dark:from-[#00B812]/20 dark:to-[#000000]">
@@ -22,18 +22,6 @@ export function LifiHeroSection() {
                    (e.target as HTMLImageElement).style.display = 'none';
                  }}
                />
-               <span className="text-slate-400 dark:text-slate-500 text-xl font-light">×</span>
-               <div className="h-8 w-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#F7C2FF' }}>
-                  <img 
-                    src="/logo_lifi_light.svg" 
-                    alt="LI.FI Logo" 
-                    className="h-5 w-5 dark:invert"
-                    onError={(e) => {
-                      // Fallback if image fails to load
-                      (e.target as HTMLImageElement).style.display = 'none';
-                    }}
-                  />
-               </div>
             </div>
             <LanguageSwitcher />
          </div>
@@ -62,14 +50,11 @@ export function LifiHeroSection() {
                <p className="text-base text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed">
                   {t.hero.description}
                </p>
-               <p className="text-sm text-slate-400 dark:text-slate-500 mt-2">
-                  {t.hero.event_date}
-               </p>
             </div>
 
             {/* Right: Countdown Timer */}
             <div className="flex flex-col items-start md:items-end space-y-4">
-               <LifiCountdown />
+               <PerpsCountdown />
             </div>
 
          </div>
@@ -77,3 +62,4 @@ export function LifiHeroSection() {
     </div>
   );
 }
+

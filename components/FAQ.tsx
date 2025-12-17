@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "@/lib/i18n";
+import { useLifiLanguage } from "@/lib/i18n-lifi";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Accordion,
@@ -10,8 +10,8 @@ import {
 } from "@/components/ui/accordion";
 import { ExternalLink } from "lucide-react";
 
-export function FAQ() {
-  const { t } = useLanguage();
+export function LifiFAQ() {
+  const { t } = useLifiLanguage();
 
   return (
     <Card className="border-0 shadow-sm dark:bg-[#111111] dark:border dark:border-white/10 overflow-hidden rounded-2xl">
