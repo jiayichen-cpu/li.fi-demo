@@ -2,7 +2,7 @@
 
 import { useLifiLanguage } from "@/lib/i18n-lifi";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { LifiCountdown } from "@/components/LifiCountdown";
+import { LifiCountdown } from "@/components/Countdown";
 
 export function LifiHeroSection() {
   const { t } = useLifiLanguage();
