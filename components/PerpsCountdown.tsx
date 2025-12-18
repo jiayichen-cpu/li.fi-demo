@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react';
 import { useLanguage } from '@/lib/i18n';
 
 // Perps countdown - adjust dates as needed
-// Target time: 2024-12-31 23:59:59 UTC (update as needed)
-const END_TIME = new Date('2024-12-31T23:59:59Z').getTime();
+// Beijing Time: 2025-12-12 00:00:00 (+08:00) -> UTC: 2025-12-11 16:00:00
+// Activity period: Dec 2-11, 2025
+const END_TIME = new Date('2025-12-11T16:00:00Z').getTime();
 
 export function PerpsCountdown() {
   const { t } = useLanguage();
