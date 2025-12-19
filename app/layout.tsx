@@ -21,10 +21,20 @@ const notoSansSC = Noto_Sans_SC({
 });
 
 export const metadata: Metadata = {
-  title: "OneKey Perps: Chase Your First 100x Return",
-  description: "Join the 7-day trading challenge. Trade or share strategies to win OneKey Classic 1S and exclusive merchandise.",
+  title: "OneKey × LI.FI Trading Carnival",
+  description: "Complete cross-chain or Swap on OneKey App using LI.FI channel to participate in daily draws. Teams of 2-5 members can participate in the trading event, ranked by combined trading volume to win more rewards.",
   icons: {
     icon: '/onekey_icon_default_solid_green_black.svg',
+  },
+  openGraph: {
+    title: "OneKey × LI.FI Trading Carnival",
+    description: "Complete cross-chain or Swap on OneKey App using LI.FI channel to participate in daily draws. Teams of 2-5 members can participate in the trading event, ranked by combined trading volume to win more rewards.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "OneKey × LI.FI Trading Carnival",
+    description: "Complete cross-chain or Swap on OneKey App using LI.FI channel to participate in daily draws. Teams of 2-5 members can participate in the trading event, ranked by combined trading volume to win more rewards.",
   },
 };
 
