@@ -1,0 +1,32 @@
+需要提交的文件（共 18 个）：
+
+【新增文件 - 6 个】
+1. app/lifi/page.tsx (在 Fork 中显示为: lifi/page.tsx)
+2. lib/dictionary-lifi.ts
+3. lib/i18n-lifi.tsx
+4. components/PerpsCountdown.tsx
+5. components/PerpsHeroSection.tsx
+6. components/PerpsLeaderboardTable.tsx
+
+【修改文件 - 12 个】
+7. app/api/cron/route.ts (在 Fork 中显示为: api/cron/route.ts)
+8. app/layout.tsx (在 Fork 中显示为: layout.tsx)
+9. app/perps/page.tsx (在 Fork 中显示为: perps/page.tsx)
+10. components/Countdown.tsx
+11. components/FAQ.tsx
+12. components/HeroSection.tsx
+13. components/LeaderboardTable.tsx
+14. components/QuickGuide.tsx
+15. lib/hydromancer.ts
+16. lib/i18n.tsx
+17. lib/prisma.ts
+18. Dockerfile
+
+【不要提交的文件】
+- DEPLOYMENT.md
+- components/ui/table.tsx
+- 创建PR的链接.txt
+- 推送代码到GitHub指南.md
+- 需要提交的文件清单.md
+- 提交文件清单.txt (这个文件本身)
+

@@ -46,7 +46,7 @@ export function LeaderboardTable({ entries, lastUpdated }: PerpsLeaderboardTable
             {t.leaderboard.title}
           </h3>
           <p className="text-[10px] text-slate-400 mt-0.5">
-            {t.leaderboard.last_updated} {formatDate(lastUpdated)}
+            {t.leaderboard.updated} {formatDate(lastUpdated)}
           </p>
         </div>
       </div>
@@ -59,10 +59,10 @@ export function LeaderboardTable({ entries, lastUpdated }: PerpsLeaderboardTable
                 {t.leaderboard.headers.rank}
               </TableHead>
               <TableHead className="font-semibold text-slate-900 dark:text-slate-200 h-[44px]">
-                {t.leaderboard.headers.address}
+                {t.leaderboard.headers.trader}
               </TableHead>
               <TableHead className="text-right font-semibold text-slate-900 dark:text-slate-200 h-[44px]">
-                {t.leaderboard.headers.daily_volume}
+                {t.leaderboard.headers.volume}
               </TableHead>
               <TableHead className="text-right pr-8 font-semibold text-slate-900 dark:text-slate-200 h-[44px]">
                 {t.leaderboard.headers.pnl || "24h PnL"}
