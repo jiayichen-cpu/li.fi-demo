@@ -55,7 +55,7 @@ export function LifiLeaderboardTable() {
 
   return (
     <Card className="border-0 shadow-sm dark:shadow-none dark:bg-[#111111] dark:border dark:border-white/10 overflow-hidden rounded-2xl pb-0">
-      <CardHeader className="border-b border-slate-100 dark:border-white/5 bg-white dark:bg-transparent px-8 h-[72px] flex flex-col justify-center">
+      <CardHeader className="border-b border-slate-100 dark:border-white/5 bg-white dark:bg-transparent px-6 sm:px-8 h-[72px] flex flex-col justify-center">
         <div className="flex items-center justify-between w-full gap-4">
           <div className="flex flex-col justify-center">
             <CardTitle className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">
@@ -73,7 +73,7 @@ export function LifiLeaderboardTable() {
           <Table>
             <TableHeader>
               <TableRow className="hover:bg-transparent border-b border-slate-100 dark:border-white/5">
-                <TableHead className="w-[80px] pl-8 font-semibold text-slate-900 dark:text-slate-200 h-[44px]">
+                <TableHead className="w-[80px] pl-6 sm:pl-8 font-semibold text-slate-900 dark:text-slate-200 h-[44px]">
                   {t.leaderboard.headers.rank}
                 </TableHead>
                 <TableHead className="font-semibold text-slate-900 dark:text-slate-200 h-[44px]">
@@ -82,7 +82,7 @@ export function LifiLeaderboardTable() {
                 <TableHead className="text-right font-semibold text-slate-900 dark:text-slate-200 h-[44px]">
                   {t.leaderboard.headers.daily_volume}
                 </TableHead>
-                <TableHead className="text-right pr-8 font-semibold text-slate-900 dark:text-slate-200 h-[44px]">
+                <TableHead className="text-right pr-6 sm:pr-8 font-semibold text-slate-900 dark:text-slate-200 h-[44px]">
                   {t.leaderboard.headers.tx_count}
                 </TableHead>
               </TableRow>
@@ -93,7 +93,7 @@ export function LifiLeaderboardTable() {
                   key={entry.address} 
                   className="group hover:bg-slate-50/80 dark:hover:bg-white/[0.02] transition-colors border-b border-slate-50 dark:border-white/5 h-[60px]"
                 >
-                  <TableCell className="pl-8 font-medium h-[60px]">
+                  <TableCell className="pl-6 sm:pl-8 font-medium h-[60px]">
                     <RankBadge rank={entry.rank} />
                   </TableCell>
                   <TableCell className="h-[60px]">
@@ -104,7 +104,7 @@ export function LifiLeaderboardTable() {
                   <TableCell className="text-right font-mono font-medium h-[60px] text-slate-700 dark:text-slate-200">
                     {formatCurrency(entry.dailyVolume)}
                   </TableCell>
-                  <TableCell className="text-right pr-8 font-mono font-medium h-[60px] text-slate-700 dark:text-slate-200">
+                  <TableCell className="text-right pr-6 sm:pr-8 font-mono font-medium h-[60px] text-slate-700 dark:text-slate-200">
                     {entry.txCount}
                   </TableCell>
                 </TableRow>

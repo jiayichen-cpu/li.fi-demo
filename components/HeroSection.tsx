@@ -9,7 +9,7 @@ export function LifiHeroSection() {
 
   return (
     <div className="bg-gradient-to-b from-[rgb(235,255,239)] to-[#F5F5F7] dark:from-[#00B812]/20 dark:to-[#000000]">
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 py-10 md:py-12">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 md:py-12">
          {/* Header: Logo & Language Switcher */}
          <div className="flex justify-between items-center mb-12 lg:mb-8">
             <div className="flex items-center gap-2">

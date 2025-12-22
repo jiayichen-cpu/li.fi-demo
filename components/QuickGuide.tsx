@@ -10,7 +10,7 @@ export function LifiQuickGuide() {
 
   return (
     <Card className="border-0 shadow-sm dark:bg-[#111111] dark:border dark:border-white/10 overflow-hidden rounded-2xl">
-      <CardHeader className="border-slate-100 dark:border-white/5 bg-white dark:bg-transparent px-8 pt-2 flex flex-col justify-center">
+      <CardHeader className="border-slate-100 dark:border-white/5 bg-white dark:bg-transparent px-6 sm:px-8 pt-2 flex flex-col justify-center">
         <CardTitle className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
           {t.quick_guide.title}
         </CardTitle>
@@ -18,7 +18,7 @@ export function LifiQuickGuide() {
       <CardContent className="p-0">
         <div className="divide-y divide-slate-100 dark:divide-white/5">
           {/* Step 1 */}
-          <div className="px-8 py-4 hover:bg-slate-50/50 dark:hover:bg-white/[0.02] transition-colors">
+          <div className="px-6 sm:px-8 py-4 hover:bg-slate-50/50 dark:hover:bg-white/[0.02] transition-colors">
             <div className="space-y-2">
               <div className="flex items-start gap-3">
                 <span className="flex-shrink-0 w-6 h-6 rounded-full bg-slate-100 dark:bg-white/10 flex items-center justify-center text-xs font-bold text-slate-900 dark:text-white">
@@ -53,7 +53,7 @@ export function LifiQuickGuide() {
           </div>
 
           {/* Step 2 */}
-          <div className="px-8 py-4 hover:bg-slate-50/50 dark:hover:bg-white/[0.02] transition-colors">
+          <div className="px-6 sm:px-8 py-4 hover:bg-slate-50/50 dark:hover:bg-white/[0.02] transition-colors">
             <div className="space-y-2">
               <div className="flex items-start gap-3">
                 <span className="flex-shrink-0 w-6 h-6 rounded-full bg-slate-100 dark:bg-white/10 flex items-center justify-center text-xs font-bold text-slate-900 dark:text-white">
@@ -88,7 +88,7 @@ export function LifiQuickGuide() {
           </div>
 
           {/* Step 3 */}
-          <div className="px-8 py-4 hover:bg-slate-50/50 dark:hover:bg-white/[0.02] transition-colors">
+          <div className="px-6 sm:px-8 py-4 hover:bg-slate-50/50 dark:hover:bg-white/[0.02] transition-colors">
             <div className="space-y-2">
               <div className="flex items-start gap-3">
                 <span className="flex-shrink-0 w-6 h-6 rounded-full bg-slate-100 dark:bg-white/10 flex items-center justify-center text-xs font-bold text-slate-900 dark:text-white">
