@@ -105,24 +105,21 @@ export function LifiLeaderboardTable() {
                 <TableHead className="font-semibold text-slate-900 dark:text-slate-200 h-[44px]">
                   {t.leaderboard.headers.address}
                 </TableHead>
-                <TableHead className="text-right font-semibold text-slate-900 dark:text-slate-200 h-[44px]">
-                  {t.leaderboard.headers.daily_volume}
-                </TableHead>
                 <TableHead className="text-right pr-6 sm:pr-8 font-semibold text-slate-900 dark:text-slate-200 h-[44px]">
-                  {t.leaderboard.headers.tx_count}
+                  {t.leaderboard.headers.daily_volume}
                 </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {isLoading ? (
                 <TableRow>
-                  <TableCell colSpan={4} className="text-center py-8 text-slate-500">
+                  <TableCell colSpan={3} className="text-center py-8 text-slate-500">
                     {t.leaderboard.loading || 'Loading...'}
                   </TableCell>
                 </TableRow>
               ) : leaderboardData.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={4} className="text-center py-8 text-slate-500">
+                  <TableCell colSpan={3} className="text-center py-8 text-slate-500">
                     {t.leaderboard.no_results || 'No data available'}
                   </TableCell>
                 </TableRow>
@@ -140,11 +137,8 @@ export function LifiLeaderboardTable() {
                       {maskAddress(entry.address)}
                     </span>
                   </TableCell>
-                  <TableCell className="text-right font-mono font-medium h-[60px] text-slate-700 dark:text-slate-200">
-                    {formatCurrency(entry.dailyVolume)}
-                  </TableCell>
                   <TableCell className="text-right pr-6 sm:pr-8 font-mono font-medium h-[60px] text-slate-700 dark:text-slate-200">
-                    {entry.txCount}
+                    {formatCurrency(entry.dailyVolume)}
                   </TableCell>
                 </TableRow>
                 ))
