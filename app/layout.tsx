@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     icon: '/onekey_icon_default_solid_green_black.svg',
   },
   openGraph: {
-    title: "OneKey × LI.FI Year-End Trading Week",
+    title: "OneKey × LI.FI Year End Trading Carnival",
     description: "Complete cross-chain or Swap on OneKey App using LI.FI channel to participate in daily draws. Teams of 2-5 members can participate in the trading event, ranked by combined trading volume to win more rewards.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "OneKey × LI.FI Year-End Trading Week",
+    title: "OneKey × LI.FI Year End Trading Carnival",
     description: "Complete cross-chain or Swap on OneKey App using LI.FI channel to participate in daily draws. Teams of 2-5 members can participate in the trading event, ranked by combined trading volume to win more rewards.",
   },
 };
