@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react';
 import { useLifiLanguage } from '@/lib/i18n-lifi';
 
-// 目标时间：2025-12-31 23:59:00 UTC+8 = 2025-12-31 15:59:00 UTC
-const END_TIME = new Date('2025-12-31T15:59:00Z').getTime();
+// 目标时间：2026-01-01 23:59:00 UTC+8 = 2026-01-01 15:59:00 UTC
+const END_TIME = new Date('2026-01-01T15:59:00Z').getTime();
 
 export function LifiCountdown() {
   const { t } = useLifiLanguage();

@@ -6,7 +6,7 @@ export const lifiDictionary = {
       title_prefix: "OneKey × LI.FI",
       title_suffix: "Trading Carnival",
       description: "Complete cross-chain or Swap on OneKey App using LI.FI channel to participate in daily draws. Teams of 2-5 members can participate in the trading event, ranked by combined trading volume to win more rewards.",
-      event_date: "Event Period: Dec 16 - Dec 31",
+      event_date: "Event Period: Dec 25, 2025 - Jan 1, 2026",
     },
     countdown: {
       ends_in: "Event ends in",
@@ -103,7 +103,7 @@ export const lifiDictionary = {
       title_prefix: "OneKey × LI.FI",
       title_suffix: "交易嘉年华",
       description: "在 OneKey App 使用 LI.FI 渠道完成跨链或 Swap，即可参与每日抽奖。同时支持 2–5 人组队参与交易活动，按团队交易量排名，赢取更多奖励。",
-      event_date: "活动时间：12.16-12.31",
+      event_date: "活动时间：12.25-01.01",
     },
     countdown: {
       ends_in: "距离活动结束",
