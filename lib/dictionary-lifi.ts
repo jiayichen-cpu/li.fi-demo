@@ -103,7 +103,7 @@ export const lifiDictionary = {
       title_prefix: "OneKey × LI.FI",
       title_suffix: "交易嘉年华",
       description: "在 OneKey App 使用 LI.FI 渠道完成跨链或 Swap，即可参与每日抽奖。同时支持 2–5 人组队参与交易活动，按团队交易量排名，赢取更多奖励。",
-      event_date: "活动时间：12.25-01.01",
+      event_date: "活动时间：2025.12.25-2026.01.01",
     },
     countdown: {
       ends_in: "距离活动结束",
