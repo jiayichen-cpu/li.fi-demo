@@ -80,7 +80,7 @@ export function LifiLeaderboardTable() {
   };
 
   return (
-    <Card className="border-0 shadow-sm dark:shadow-none dark:bg-[#111111] dark:border dark:border-white/10 overflow-hidden rounded-2xl pb-0">
+    <Card className="border-0 shadow-sm dark:shadow-none dark:bg-[#111111] dark:border dark:border-white/10 overflow-hidden rounded-2xl pb-0 h-full flex flex-col">
       <CardHeader className="border-b border-slate-100 dark:border-white/5 bg-white dark:bg-transparent px-6 sm:px-8 h-[72px] flex flex-col justify-center">
         <div className="flex items-center justify-between w-full gap-4">
           <div className="flex flex-col justify-center">
@@ -94,8 +94,8 @@ export function LifiLeaderboardTable() {
         </div>
       </CardHeader>
 
-      <CardContent className="p-0 bg-white dark:bg-[#111111]">
-        <div className="overflow-x-auto">
+      <CardContent className="p-0 bg-white dark:bg-[#111111] flex-1 flex flex-col">
+        <div className="overflow-x-auto flex-1">
           <Table>
             <TableHeader>
               <TableRow className="hover:bg-transparent border-b border-slate-100 dark:border-white/5">
