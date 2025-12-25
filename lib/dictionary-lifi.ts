@@ -46,7 +46,9 @@ export const lifiDictionary = {
     leaderboard: {
       title: "LI.FI Daily Volume Rankings",
       last_updated: "Last updated:",
-      refresh_note: "Refreshes daily at 00:00 UTC",
+      refresh_note: "Refreshes daily at 00:00 (UTC+8)",
+      loading: "Loading...",
+      no_results: "No data available",
       headers: {
         rank: "Rank",
         address: "Address",
@@ -141,7 +143,9 @@ export const lifiDictionary = {
     leaderboard: {
       title: "LI.FI 日交易量排行榜",
       last_updated: "更新于:",
-      refresh_note: "每日 00:00 UTC 刷新",
+      refresh_note: "每日 00:00 (UTC+8) 刷新",
+      loading: "加载中...",
+      no_results: "暂无数据",
       headers: {
         rank: "排名",
         address: "地址",

@@ -24,17 +24,17 @@ export default function PerpsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Rules & FAQ (4/12) */}
           <div className="lg:col-span-4 order-2 lg:order-1">
-            <EventDetails />
+             <EventDetails />
           </div>
 
           {/* Right Column: Leaderboard (8/12) */}
           <div className="lg:col-span-8 order-1 lg:order-2 space-y-6">
             <Card className="border-0 shadow-sm dark:shadow-none dark:bg-[#111111] dark:border dark:border-white/10 overflow-hidden rounded-2xl pb-0">
               <CardContent className="p-0 bg-white dark:bg-[#111111]">
-                <LeaderboardTable
-                  entries={entries}
+                  <LeaderboardTable 
+                    entries={entries} 
                   lastUpdated={finalUpdateDate}
-                />
+                  />
               </CardContent>
             </Card>
           </div>

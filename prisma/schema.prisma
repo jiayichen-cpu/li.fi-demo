@@ -17,3 +17,11 @@ model LeaderboardSnapshot {
   entries     String   // Stored as JSON string
   createdAt   DateTime @default(now())
 }
+
+model LifiLeaderboardSnapshot {
+  id          Int      @id @default(autoincrement())
+  date        DateTime @unique
+  totalVolume Float
+  entries     String   // Stored as JSON string (LeaderboardEntry[])
+  createdAt   DateTime @default(now())
+}

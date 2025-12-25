@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { useLifiLanguage } from '@/lib/i18n-lifi';
 import {
   Table,
@@ -40,6 +41,31 @@ function RankBadge({ rank }: { rank: number }) {
 
 export function LifiLeaderboardTable() {
   const { t, locale } = useLifiLanguage();
+  const [leaderboardData, setLeaderboardData] = useState<LeaderboardEntry[]>(mockLeaderboardData.slice(0, 10));
+  const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // 从 API 获取排行榜数据
+    fetch('/api/lifi/leaderboard')
+      .then(res => res.json())
+      .then(result => {
+        if (result.success && result.entries) {
+          setLeaderboardData(result.entries);
+          if (result.lastUpdated) {
+            setLastUpdated(new Date(result.lastUpdated));
+          }
+        }
+      })
+      .catch(error => {
+        console.error('Failed to fetch leaderboard:', error);
+        // 失败时使用静态数据
+        setLeaderboardData(mockLeaderboardData.slice(0, 10));
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, []);
 
   const formatDate = (date: Date) => {
     // Use the user's locale based on current language setting
@@ -62,7 +88,7 @@ export function LifiLeaderboardTable() {
               {t.leaderboard.title}
             </CardTitle>
             <CardDescription className="mt-0.5 text-[10px] text-slate-400 hidden md:block">
-              {t.leaderboard.last_updated} {formatDate(new Date())} • {t.leaderboard.refresh_note}
+              {t.leaderboard.last_updated} {formatDate(lastUpdated)} • {t.leaderboard.refresh_note}
             </CardDescription>
           </div>
         </div>
@@ -88,7 +114,20 @@ export function LifiLeaderboardTable() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {mockLeaderboardData.map((entry) => (
+              {isLoading ? (
+                <TableRow>
+                  <TableCell colSpan={4} className="text-center py-8 text-slate-500">
+                    {t.leaderboard.loading || 'Loading...'}
+                  </TableCell>
+                </TableRow>
+              ) : leaderboardData.length === 0 ? (
+                <TableRow>
+                  <TableCell colSpan={4} className="text-center py-8 text-slate-500">
+                    {t.leaderboard.no_results || 'No data available'}
+                  </TableCell>
+                </TableRow>
+              ) : (
+                leaderboardData.map((entry) => (
                 <TableRow 
                   key={entry.address} 
                   className="group hover:bg-slate-50/80 dark:hover:bg-white/[0.02] transition-colors border-b border-slate-50 dark:border-white/5 h-[60px]"
@@ -108,7 +147,8 @@ export function LifiLeaderboardTable() {
                     {entry.txCount}
                   </TableCell>
                 </TableRow>
-              ))}
+                ))
+              )}
             </TableBody>
           </Table>
         </div>
