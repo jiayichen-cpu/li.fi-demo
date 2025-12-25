@@ -4,7 +4,7 @@ export const lifiDictionary = {
   en: {
     hero: {
       title_prefix: "OneKey × LI.FI",
-      title_suffix: "Trading Carnival",
+      title_suffix: "Year-End Trading Week",
       description: "Complete cross-chain or Swap on OneKey App using LI.FI channel to participate in daily draws. Teams of 2-5 members can participate in the trading event, ranked by combined trading volume to win more rewards.",
       event_date: "Event Period: Dec 25, 2025 - Jan 1, 2026",
     },
@@ -28,7 +28,7 @@ export const lifiDictionary = {
         step2: {
           title: "Go to Swap, switch to LI.FI",
           desc: "After entering Swap page, select LI.FI as your exchange channel provider. See Help Center for detailed instructions.",
-          help_link: "https://example.com/help-center-lifi",
+          help_link: "https://help.onekey.so/en/articles/13165991-onekey-li-fi-year-end-trading-week",
           help_button: "Help Center",
         },
         step3: {
@@ -101,7 +101,7 @@ export const lifiDictionary = {
   zh: {
     hero: {
       title_prefix: "OneKey × LI.FI",
-      title_suffix: "交易嘉年华",
+      title_suffix: "跨年交易周",
       description: "在 OneKey App 使用 LI.FI 渠道完成跨链或 Swap，即可参与每日抽奖。同时支持 2–5 人组队参与交易活动，按团队交易量排名，赢取更多奖励。",
       event_date: "活动时间：2025.12.25-2026.01.01",
     },
@@ -125,7 +125,7 @@ export const lifiDictionary = {
         step2: {
           title: "进入 Swap，切换渠道为 LI.FI",
           desc: "进入 Swap 页面后，选择 LI.FI 作为兑换渠道商。详情操作见帮助中心。",
-          help_link: "https://example.com/help-center-lifi",
+          help_link: "https://help.onekey.so/en/articles/13165991-onekey-li-fi-year-end-trading-week",
           help_button: "帮助中心",
         },
         step3: {
