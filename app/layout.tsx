@@ -21,19 +21,19 @@ const notoSansSC = Noto_Sans_SC({
 });
 
 export const metadata: Metadata = {
-  title: "OneKey × LI.FI Trading Carnival",
+  title: "OneKey × LI.FI Year-End Trading Week",
   description: "Complete cross-chain or Swap on OneKey App using LI.FI channel to participate in daily draws. Teams of 2-5 members can participate in the trading event, ranked by combined trading volume to win more rewards.",
   icons: {
     icon: '/onekey_icon_default_solid_green_black.svg',
   },
   openGraph: {
-    title: "OneKey × LI.FI Trading Carnival",
+    title: "OneKey × LI.FI Year-End Trading Week",
     description: "Complete cross-chain or Swap on OneKey App using LI.FI channel to participate in daily draws. Teams of 2-5 members can participate in the trading event, ranked by combined trading volume to win more rewards.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "OneKey × LI.FI Trading Carnival",
+    title: "OneKey × LI.FI Year-End Trading Week",
     description: "Complete cross-chain or Swap on OneKey App using LI.FI channel to participate in daily draws. Teams of 2-5 members can participate in the trading event, ranked by combined trading volume to win more rewards.",
   },
 };
